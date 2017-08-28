@@ -1,2 +1,3 @@
 # CNN-Sentence-Classification-PyTorch
-A simple implementation of CNN for sentence classification in PyTorch.
+
+This is an implementation of model in `Convolutional Neural Networks for Sentence Classification` paper with PyTorch. I used GLoVe model for acquiring word representations.
