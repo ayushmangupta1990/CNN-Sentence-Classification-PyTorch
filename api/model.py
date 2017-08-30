@@ -57,6 +57,10 @@ class GloVeClass(nn.Module):
         super(GloVeClass, self).__init__()
 
         print("[GloVeClass Initialization Start]")
+        
+        if not os.path.exists("./model/"):
+            os.makedirs("./model/")
+
         self.TOKENIZED_CORPUS = TOKENIZED_CORPUS
         self.UNIQUE_WORD_LIST = UNIQUE_WORD_LIST
         self.CONTEXT_SIZE = CONTEXT_SIZE

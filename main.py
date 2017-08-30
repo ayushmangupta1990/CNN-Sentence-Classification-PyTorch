@@ -16,6 +16,7 @@ if not CUDA_AVAILABLE:
 	raise Exception("CUDA is not available")
 torch.manual_seed(1)
 torch.cuda.manual_seed(1)
+
 PARAMS = {    
 	"WORD_EMBED_SIZE" : 300,
 
@@ -31,10 +32,12 @@ PARAMS = {
 print("Parameters : {}".format(PARAMS))
 
 print("Word embedding(GloVe) start")
-CORPUS_PATH = ["./data/rt-polaritydata/rt-polarity.pos", "./data/rt-polaritydata/rt-polarity.neg"]
-tokenized_corpus = load_txt_and_tokenize(CORPUS_PATH, "ISO-8859-1")
+MR = MovieReview()
+tokenized_corpus = load_txt_and_tokenize(MR.CORPUS_PATH, "ISO-8859-1")
 unique_word_list = np.unique(tokenized_corpus)
 unique_word_list_size = unique_word_list.size
+print("TOKENIZED_CORPUS_SIZE : ", len(load_txt_and_tokenize))
+print("UNIQUE_WORD_SIZE : ", unique_word_list.size)
 GloVe = GloVeClass(
 	tokenized_corpus, 
 	unique_word_list, 
@@ -72,3 +75,4 @@ for epoch in range(PARAMS["GLOVE_NUM_EPOCHS"]):
         )
 print("Done")
 
+print("Movie Review Sentence Classification start")
