@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import scipy.io
 from scipy.sparse import save_npz, load_npz, coo_matrix

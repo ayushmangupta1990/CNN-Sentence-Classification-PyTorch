@@ -5,6 +5,7 @@ import torch
 from progressbar import ProgressBar
 from api.util import LoggerClass
 from api.model import GloVeClass
+from api.util import MovieReview
 from api.util import load_txt_and_tokenize
 
 print = LoggerClass("./20170830.log").logger.info
@@ -26,18 +27,18 @@ PARAMS = {
 	"GLOVE_L_RATE" : 0.05,
 	"GLOVE_PROCESS_NUM" : 4,
 	"GLOVE_BATCH_SIZE" : 1024,
-	"GLOVE_NUM_EPOCHS" : 100
+	"GLOVE_NUM_EPOCHS" : 1
 
 }
 print("Parameters : {}".format(PARAMS))
 
 print("Word embedding(GloVe) start")
 MR = MovieReview()
-tokenized_corpus = load_txt_and_tokenize(MR.CORPUS_PATH, "ISO-8859-1")
+tokenized_corpus = load_txt_and_tokenize(MR.CORPUS_PATH, "ISO-8859-1")[:1000]
 unique_word_list = np.unique(tokenized_corpus)
 unique_word_list_size = unique_word_list.size
-print("TOKENIZED_CORPUS_SIZE : ", len(load_txt_and_tokenize))
-print("UNIQUE_WORD_SIZE : ", unique_word_list.size)
+print("TOKENIZED_CORPUS_SIZE : {}".format(len(tokenized_corpus)))
+print("UNIQUE_WORD_SIZE : {}".format(unique_word_list.size))
 GloVe = GloVeClass(
 	tokenized_corpus, 
 	unique_word_list, 
