@@ -3,6 +3,7 @@ import tarfile
 import zipfile
 from six.moves.urllib import request
 import re 
+from api.util import clean_str
 
 class MovieReview():
     """
@@ -53,27 +54,6 @@ class MovieReview():
             file.extractall(path = to_directory)
         finally: 
             file.close()
-            
-    def clean_str(self, string):
-        """
-            Cleaning string
-        """
-        # Original : https://github.com/yoonkim/CNN_sentence/blob/master/process_data.py
-        # Tips for handling string in python : http://agiantmind.tistory.com/31
-        string = re.sub(r"[^A-Za-z0-9(),!?\'\`]", " ", string)
-        string = re.sub(r"\'s", " \'s", string)
-        string = re.sub(r"\'ve", " \'ve", string)
-        string = re.sub(r"n\'t", " n\'t", string)
-        string = re.sub(r"\'re", " \'re", string)
-        string = re.sub(r"\'d", " \'d", string)
-        string = re.sub(r"\'ll", " \'ll", string)
-        string = re.sub(r",", " , ", string)
-        string = re.sub(r"!", " ! ", string)
-        string = re.sub(r"\(", " ( ", string)
-        string = re.sub(r"\)", " ) ", string)
-        string = re.sub(r"\?", " ? ", string)
-        string = re.sub(r"\s{2,}", " ", string)
-        return string.strip()
     
     def get_pos_data(self, path):
         """
@@ -82,7 +62,7 @@ class MovieReview():
         # UnicodeDecodeError: 'utf-8' codec can't decode byte
         # https://stackoverflow.com/questions/19699367/unicodedecodeerror-utf-8-codec-cant-decode-byte
         with open("./data/rt-polaritydata/rt-polarity.pos", encoding="ISO-8859-1") as f:
-            data = [self.clean_str(line) for line in f]
+            data = [clean_str(line) for line in f]
         return data
     
     def get_neg_data(self, path):
@@ -90,5 +70,5 @@ class MovieReview():
             return negative review data
         """
         with open("./data/rt-polaritydata/rt-polarity.neg", encoding="ISO-8859-1") as f:
-            data = [self.clean_str(line) for line in f]
+            data = [clean_str(line) for line in f]
         return data
