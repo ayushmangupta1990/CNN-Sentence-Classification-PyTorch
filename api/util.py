@@ -22,7 +22,7 @@ def clean_str(string):
     string = re.sub(r"\s{2,}", " ", string)    
     return string.strip().split()
 
-def load_txt_and_tokenize(corpus_path):
+def load_txt_and_tokenize(corpus_path, encoding):
     """
         load corpus and remove stopwords and return tokenized corpus
         
@@ -34,7 +34,7 @@ def load_txt_and_tokenize(corpus_path):
     """
     tokenized_corpus = list()
     for path in corpus_path:
-        with open(path) as f:
+        with open(path, encoding=encoding) as f:
             for line in f:
                 line = clean_str(line.lower().strip())
                 for word in line:

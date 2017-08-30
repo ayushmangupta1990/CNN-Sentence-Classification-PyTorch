@@ -7,8 +7,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.nn.init import xavier_normal
 from torch.autograd import Variable
-from api.util import LoggerClass
-print = LoggerClass("./20170830.log").logger.info
 
 class SentenceClassifier(nn.Module):
     
