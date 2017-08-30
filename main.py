@@ -38,7 +38,7 @@ unique_word_list_size = unique_word_list.size
 GloVe = GloVeClass(
 	tokenized_corpus, 
 	unique_word_list, 
-	PARAMS["WORD_EMBED_SIZE"], 
+	PARAMS["WORD_EMBED_SIZE"],  
 	PARAMS["GLOVE_CONTEXT_SIZE"], 
 	PARAMS["GLOVE_X_MAX"], 
 	PARAMS["GLOVE_ALPHA"], 
