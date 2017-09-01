@@ -5,28 +5,9 @@ from six.moves.urllib import request
 import logging
 import re
 import string
+import numpy as np
 
-def clean_str(string):
-    """
-    Tokenization/string cleaning for all datasets.
-    """
-    # Tips for handling string in python : http://agiantmind.tistory.com/31
-    string = re.sub(r"[^A-Za-z0-9(),!?\'\`]", " ", string)     
-    string = re.sub(r"\'s", " \'s", string) 
-    string = re.sub(r"\'ve", " \'ve", string) 
-    string = re.sub(r"n\'t", " n\'t", string) 
-    string = re.sub(r"\'re", " \'re", string) 
-    string = re.sub(r"\'d", " \'d", string) 
-    string = re.sub(r"\'ll", " \'ll", string) 
-    string = re.sub(r",", " , ", string) 
-    string = re.sub(r"!", " ! ", string) 
-    string = re.sub(r"\(", " \( ", string) 
-    string = re.sub(r"\)", " \) ", string) 
-    string = re.sub(r"\?", " \? ", string) 
-    string = re.sub(r"\s{2,}", " ", string)    
-    return string.strip().split()
-
-class MovieReview():
+class MovieReviewDataset():
     """
         Handling movie review dataset
         
@@ -38,7 +19,7 @@ class MovieReview():
             >> MR = MovieReview()
             >> MR.raw_data["pos"][:10] # get 10 examples
     """
-    def __init__(self):
+    def __init__(self, encoding):
         """
             Download dataset and parsing it
         """
@@ -47,9 +28,11 @@ class MovieReview():
         self.download_file("http://www.cs.cornell.edu/people/pabo/movie-review-data/rt-polaritydata.tar.gz","./data/rt-polaritydata.tar.gz")
         self.extract_file("./data/rt-polaritydata.tar.gz")
         self.CORPUS_PATH = ["./data/rt-polaritydata/rt-polarity.pos", "./data/rt-polaritydata/rt-polarity.neg"]
-        self.raw_data = dict()
-        self.raw_data["pos"] = self.get_pos_data("./data/rt-polaritydata/rt-polarity.pos")
-        self.raw_data["neg"] = self.get_neg_data("./data/rt-polaritydata/rt-polarity.neg")
+        self.processed_corpus_path = self.preprocessing(CORPUS_PATH, encoding)
+        self.tokenized_corpus = self.tokenize_all(processed_corpus_path)
+        self.unique_word_list = np.unique(self.tokenized_corpus) 
+        self.unique_word_list_size = self.unique_word_list.size   
+        self.word_to_index = {word: index for index, word in enumerate(self.unique_word_list)}
 
     def download_file(self, url, path):
         """
@@ -73,47 +56,82 @@ class MovieReview():
 
         file = opener(path, mode)
         try: 
-            file.extractall(path = to_directory)
+            file.extractall(to_directory)
         finally: 
             file.close()
-    
-    def get_pos_data(self, path):
+
+    def clean_str(self, string):
         """
-            return positive review data
+        Tokenization/string cleaning for all datasets.
         """
+        # Tips for handling string in python : http://agiantmind.tistory.com/31   
+        string = re.sub(r"[^A-Za-z0-9(),!?\'\`]", " ", string)     
+        string = re.sub(r"\'s", " \'s", string) 
+        string = re.sub(r"\'ve", " \'ve", string) 
+        string = re.sub(r"n\'t", " n\'t", string) 
+        string = re.sub(r"\'re", " \'re", string) 
+        string = re.sub(r"\'d", " \'d", string) 
+        string = re.sub(r"\'ll", " \'ll", string) 
+        string = re.sub(r",", " , ", string) 
+        string = re.sub(r"!", " ! ", string) 
+        string = re.sub(r"\(", " \( ", string) 
+        string = re.sub(r"\)", " \) ", string) 
+        string = re.sub(r"\?", " \? ", string) 
+        string = re.sub(r"\s{2,}", " ", string) # replace more than 2 whitespace with 1 whitespace   
+        return string.strip().split()
+
+    def proprocessing(self, corpus_path, encoding):
         # UnicodeDecodeError: 'utf-8' codec can't decode byte
         # https://stackoverflow.com/questions/19699367/unicodedecodeerror-utf-8-codec-cant-decode-byte
-        with open("./data/rt-polaritydata/rt-polarity.pos", encoding="ISO-8859-1") as f:
-            data = [clean_str(line) for line in f]
-        return data
-    
-    def get_neg_data(self, path):
-        """
-            return negative review data
-        """
-        with open("./data/rt-polaritydata/rt-polarity.neg", encoding="ISO-8859-1") as f:
-            data = [clean_str(line) for line in f]
-        return data
+        # get max line length
+        mx = 0
+        for path in corpus_path:
+            with open(path, encoding=encoding) as f:
+                for line in f:
+                    line = clean_str(line.lower().strip())
+                    if len(line) > mx: 
+                        mx = len(line)
+            f.close()   
+        processed_corpus_path = list()  
+        for path in corpus_path:
+            new_path = path + ".processed"
+            processed_corpus_path.append(new_path)
+            with open(path, encoding=encoding) as f:
+                with open(new_path, 'w') as f_new:
+                    for line in f:
+                        new_line = clean_str(line.lower().strip())
+                        new_line += " <PAD>"*(mx-len(new_line))
+                        f_new.write(new_line+'\n')
+                        break # for dubug
+                f_new.close() 
+            f.close()               
+        return processed_corpus_path
 
-def load_txt_and_tokenize(corpus_path, encoding):
-    """
-        load corpus and remove stopwords and return tokenized corpus
-        
-        Args:
-            corpus_path(list) : the list of path of corpus
-            
-        Return:
-            tokenized corpus with list type
-    """
-    tokenized_corpus = list()
-    for path in corpus_path:
-        with open(path, encoding=encoding) as f:
-            for line in f:
-                line = clean_str(line.lower().strip())
-                for word in line:
-                    tokenized_corpus.append(word)
-    f.close()                    
-    return tokenized_corpus
+    def tokenize_all(self, processed_corpus_path):
+        """
+            return tokenized corpus
+        """
+        tokenized_corpus = list()
+        for path in processed_corpus_path:
+            with open(path) as f:
+                for line in f:
+                    for word in line.strip().split():
+                        self.tokenized_corpus.append(word)
+            f.close()
+        return tokenized_corpus
+
+    def build_train_data(self):
+        train_data = list()
+        with open("./data/rt-polaritydata/rt-polarity.pos.processed") as f:
+            train_pos_data = np.array([[[word_to_index[word]] for word in line.strip().split()] for line in f])
+            train_pos_label = np.ones(train_pos_data.size)
+        f.close()
+        with open("./data/rt-polaritydata/rt-polarity.neg.processed") as f:
+            train_neg_data = np.array([[[word_to_index[word]] for word in line.strip().split()] for line in f])
+            train_neg_label = np.zeros(train_neg_data.size)
+        f.close()
+        datasize = train_pos_data.size + train_neg_data.size
+        return train_data, train_label, datasize
 
 class LoggerClass():
     def __init__(self, logfilepath):
