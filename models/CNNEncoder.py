@@ -18,7 +18,8 @@ class CNNEncoder(nn.Module):
         self.convs = nn.ModuleList([nn.Conv2d(1, self.config.cnn_output_channel, (n, self.config.word_edim)) for n in self.config.cnn_n_gram_list])
 
     def forward(self, x):
-        self.embed.weight.data[self.dictionary['word2idx']['<pad>']] = 0
+        if self.config.embed_pad_zero:
+            self.embed.weight.data[self.dictionary['word2idx']['<pad>']] = 0
         x = self.embed(x) # (batch_size,seq_len,word_edim)
         if self.config.embed_static:
             x = Variable(x)
