@@ -4,6 +4,7 @@ import argparse
 import numpy as np
 import torch
 from sklearn import model_selection
+from sklearn.preprocessing import normalize
 from utils import print, ProgressBar, clean_str
 from models.GloVe import GloVe, run_GloVe
 from model import SentenceClassifier, run_SentenceClassifier
@@ -40,6 +41,7 @@ parser.add_argument('--classifier-epochs', type=int, default=50, help='(default:
 
 parser.add_argument('--skip-glove', type=bool, default=False, help='(default: false)')
 parser.add_argument('--embed-rand', type=bool, default=False, help='(default: false)')
+parser.add_argument('--embed-normalize', type=bool, default=False, help='(default: false)')
 parser.add_argument('--embed-pad-zero', type=bool, default=False, help='(default: false)')
 parser.add_argument('--embed-static', type=bool, default=False, help='(default: false)')
 
@@ -140,10 +142,13 @@ if __name__ == '__main__':
         word_embedding_array = loaded_data['word_embedding_array']
         assert dictionary == loaded_data['dictionary']
 
+    # normalizeを入れた，零ベクトルにする処理はこの後にしないと明らかにエラー
     # <pad>のembed結果のための零ベクトルを入れる．
     # Gloveで<pad>は学習しないようにしてる．
     # Unique wordとしてembedding arrayの中に場所は確保しているけど，tokenized corpusの中にないので学習は進まない
     # この<pad>は零ベクトルとする．
+    if config.embed_normalize:
+        word_embedding_array = normalize(word_embedding_array, axis=1, norm='l1')
     if config.embed_pad_zero:
         word_embedding_array[dictionary["word2idx"]['<pad>']] = 0
 
