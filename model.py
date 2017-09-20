@@ -4,6 +4,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch import optim
 from torch.autograd import Variable
+from torch.nn.init import xavier_normal
 from models.CNNEncoder import CNNEncoder
 from utils import print, ProgressBar
 

@@ -39,6 +39,7 @@ parser.add_argument('--classifier-batch-size', type=int, default=50, help='(defa
 parser.add_argument('--classifier-epochs', type=int, default=50, help='(default: 50)')
 
 parser.add_argument('--skip-glove', type=bool, default=False, help='(default: false)')
+parser.add_argument('--embed-rand', type=bool, default=False, help='(default: false)')
 parser.add_argument('--embed-static', type=bool, default=False, help='(default: false)')
 
 parser.add_argument('--show-progress', type=bool, default=True, help='show progress (default: true)')
