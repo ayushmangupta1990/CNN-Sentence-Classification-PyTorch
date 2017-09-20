@@ -86,7 +86,6 @@ def run_SentenceClassifier(config, model, train_data, train_label, test_data, te
                 batch_label = batch_label.cuda()
             output = model(batch_data)
             loss = F.cross_entropy(output, batch_label)
-            total_pure_loss += loss.data
             total_loss += loss.data
             predictions = torch.max(output,1)[1].type_as(batch_label) # axis1での，つまり各データの中で最大の要素のindexを返す．(argmax)
             total_acc += predictions.eq(batch_label).cpu().sum().data[0]
