@@ -154,4 +154,3 @@ if __name__ == '__main__':
             run_SentenceClassifier(config, model, train_data, train_label, test_data, test_label)
     else:
         run_SentenceClassifier(config, model, train_data, train_label, test_data, test_label)
->>>>>>> 02cb0e72256593fa96f0900f266be615e42a91f3
