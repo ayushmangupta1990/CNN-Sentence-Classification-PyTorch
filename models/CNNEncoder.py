@@ -1,3 +1,7 @@
+import torch
+import torch.nn as nn
+from torch.autograd import Variable
+
 class CNNEncoder(nn.Module):
     
     def __init__(self, config, word_embedding_array):
