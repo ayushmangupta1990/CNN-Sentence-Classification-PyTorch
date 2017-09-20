@@ -25,7 +25,7 @@ class SentenceClassifier(nn.Module):
         self.pred.weight.data.uniform_(-init_range, init_range)
         self.pred.bias.data.fill_(0)
 
-    def forward(self, inp, hidden):
+    def forward(self, inp):
         outp = self.encoder.forward(inp) # [batch_size, len(self.config.cnn_n_gram_list)*self.config.cnn_output_channel]
         pred = self.softmax(self.pred(self.drop(outp)))
         return pred
