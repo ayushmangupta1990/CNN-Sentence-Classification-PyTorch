@@ -104,4 +104,4 @@ def run_SentenceClassifier(config, model, train_data, train_label, test_data, te
         train_total_loss, train_pure_loss = train(train_data, train_label, epoch+1)
         model.eval()
         test_total_loss, test_pure_loss, test_acc = test(test_data, test_label)
-        print("Train Epoch: {:3d} \t train_total_loss: {:.4f} \t train_pure_loss: {:.4f} \t test_total_loss: {:.4f} \t test_pure_loss: {:.4f} \t test_acc: {:.3f}".format(epoch + 1, train_total_loss, train_pure_loss, test_total_loss, test_pure_loss, test_acc))
+        #print("Train Epoch: {:3d} \t train_total_loss: {:.4f} \t train_pure_loss: {:.4f} \t test_total_loss: {:.4f} \t test_pure_loss: {:.4f} \t test_acc: {:.3f}".format(epoch + 1, train_total_loss, train_pure_loss, test_total_loss, test_pure_loss, test_acc))
