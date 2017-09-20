@@ -99,13 +99,6 @@ def run_SentenceClassifier(config, model, train_data, train_label, test_data, te
 
     optimizer = optim.Adam(model.parameters(), lr=config.classifier_lr)
 
-    I = Variable(torch.zeros(config.classifier_batch_size, config.attention_rows, config.attention_rows))
-    for i in range(config.classifier_batch_size):
-        for j in range(config.attention_rows):
-            I.data[i][j][j] = 1
-    if config.cuda:
-        I = I.cuda()
-
     for epoch in range(config.classifier_epochs):
         model.train()
         train_total_loss, train_pure_loss = train(train_data, train_label, epoch+1)
