@@ -16,7 +16,7 @@ class CNNEncoder(nn.Module):
         else:
             self.embed.weight.data.copy_(torch.from_numpy(word_embedding_array))
         if self.config.embed_static:
-            self.word_embed.weight.requires_grad = False
+            self.embed.weight.requires_grad = False
         self.convs = nn.ModuleList([nn.Conv2d(1, self.config.cnn_output_channel, (n, self.config.word_edim)) for n in self.config.cnn_n_gram_list])
 
     def forward(self, x):
