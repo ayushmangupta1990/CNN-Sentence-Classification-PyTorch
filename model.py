@@ -14,7 +14,7 @@ class SentenceClassifier(nn.Module):
         self.config = config
         self.build_model(word_embedding_array, dictionary)
 
-    def build_model(self, word_embedding_array):
+    def build_model(self, word_embedding_array, dictionary):
         self.encoder = CNNEncoder(self.config, word_embedding_array, dictionary)
         self.pred = nn.Linear(len(self.config.cnn_n_gram_list)*self.config.cnn_output_channel, self.config.classifier_class_number)
         self.drop = nn.Dropout(self.config.classifier_dropout_rate)
