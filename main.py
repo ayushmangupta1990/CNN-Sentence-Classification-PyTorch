@@ -2,6 +2,7 @@ import os
 import datetime
 import numpy as np
 import torch
+from torch.autograd import Variable
 from progressbar import ProgressBar
 from api.util import LoggerClass
 from api.model import GloVeClass
