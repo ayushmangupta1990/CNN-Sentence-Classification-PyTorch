@@ -18,7 +18,7 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
 parser = argparse.ArgumentParser(description='Implementation of the paper "A Structured Self Attentive Sentence Embedding" in PyTorch')
 
-parser.add_argument('--word-edim', type=int, default=100, help='word embedding dimension (default: 100)')
+parser.add_argument('--word-edim', type=int, default=300, help='word embedding dimension (default: 300)')
 
 parser.add_argument('--glove-batch-size', type=int, default=4096, help='input batch size for training glove model (default: 4096)')
 parser.add_argument('--glove-epochs', type=int, default=10, help='number of epochs for training glove model (default: 10)')
@@ -134,7 +134,7 @@ if __name__ == '__main__':
             word_embedding_array = glove.embedding()
         raise Exception("Glove Training done")
     else:
-        loaded_data = np.load('./checkpoints/word_embedding.npz')
+        loaded_data = np.load('./checkpoints/word_embedding_{}.npz'.format(config.word_edim))
         word_embedding_array = loaded_data['word_embedding_array']
         assert dictionary == loaded_data['dictionary']
 

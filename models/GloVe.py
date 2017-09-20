@@ -153,12 +153,12 @@ def run_GloVe(config, model):
             print('Timestamp: {:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now()))
         print('Train Epoch: {} \t Loss: {:.6f}'.format(epoch + 1, np.mean(losses)))
         if config.cuda and config.gpu_num > 1:
-            np.savez('./checkpoints/word_embedding.npz', 
+            np.savez('./checkpoints/word_embedding_{}.npz'.format(config.word_edim), 
                 word_embedding_array=model.module.embedding(), 
                 dictionary=model.module.dictionary
             )
         else:
-            np.savez('./checkpoints/word_embedding.npz', 
+            np.savez('./checkpoints/word_embedding_{}.npz'.format(config.word_edim), 
                 word_embedding_array=model.embedding(), 
                 dictionary=model.dictionary
             )
