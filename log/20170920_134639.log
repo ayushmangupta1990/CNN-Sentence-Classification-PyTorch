@@ -1,0 +1,11 @@
+[INFO|main.py:54] 2017-09-20 13:46:42,366 > Use 1 GPU 1
+[INFO|main.py:107] 2017-09-20 13:46:43,922 > Train data num : 9594, Test data num : 1068.
+[INFO|main.py:118] 2017-09-20 13:46:43,924 > Config
+[INFO|main.py:119] 2017-09-20 13:46:43,925 > Namespace(classifier_batch_size=50, classifier_class_number=2, classifier_dropout_rate=0.5, classifier_epochs=50, classifier_grad_norm_clip=3, classifier_lr=0.01, cnn_n_gram_list=[3, 4, 5], cnn_output_channel=100, cuda=True, data_dir='./data/rt-polaritydata/', embed_static=False, glove_alpha=0.75, glove_batch_size=4096, glove_context_size=5, glove_epochs=10, glove_lr=0.1, glove_process_num=1, glove_x_max=100, gpu_num=1, no_cuda=False, random_state=1505882802, seq_len=56, show_progress=True, skip_glove=False, unique_word_size=18765, word_edim=100)
+[INFO|GloVe.py:126] 2017-09-20 13:46:54,047 > Glove model parameters
+[INFO|GloVe.py:128] 2017-09-20 13:46:54,047 > torch.Size([18765, 100])
+[INFO|GloVe.py:128] 2017-09-20 13:46:54,048 > torch.Size([18765, 1])
+[INFO|GloVe.py:128] 2017-09-20 13:46:54,048 > torch.Size([18765, 100])
+[INFO|GloVe.py:128] 2017-09-20 13:46:54,048 > torch.Size([18765, 1])
+[INFO|GloVe.py:131] 2017-09-20 13:46:54,050 > Train start
+[INFO|GloVe.py:132] 2017-09-20 13:46:54,050 > Timestamp: 2017-09-20 13:46:54

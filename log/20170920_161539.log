@@ -1,0 +1,4 @@
+[INFO|main.py:58] 2017-09-20 16:15:42,123 > Use 1 GPU 1
+[INFO|main.py:111] 2017-09-20 16:15:43,859 > Train data num : 9594, Test data num : 1068.
+[INFO|main.py:122] 2017-09-20 16:15:43,863 > Config
+[INFO|main.py:123] 2017-09-20 16:15:43,863 > Namespace(classifier_batch_size=50, classifier_class_number=2, classifier_dropout_rate=0.5, classifier_epochs=50, classifier_grad_norm_clip=3, classifier_lr=0.01, cnn_n_gram_list=[3, 4, 5], cnn_output_channel=100, cuda=True, data_dir='./data/rt-polaritydata/', embed_normalize=True, embed_pad_zero=True, embed_rand=False, embed_static=True, glove_alpha=0.75, glove_batch_size=4096, glove_context_size=5, glove_epochs=10, glove_lr=0.1, glove_process_num=1, glove_x_max=100, gpu_num=1, no_cuda=False, random_state=1505891742, seq_len=56, show_progress=True, skip_glove=True, unique_word_size=18765, word_edim=300)

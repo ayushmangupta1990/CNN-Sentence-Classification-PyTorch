@@ -1,0 +1,25 @@
+[INFO|main.py:56] 2017-09-20 16:05:24,742 > Use 1 GPU 1
+[INFO|main.py:109] 2017-09-20 16:05:26,641 > Train data num : 9594, Test data num : 1068.
+[INFO|main.py:120] 2017-09-20 16:05:26,644 > Config
+[INFO|main.py:121] 2017-09-20 16:05:26,644 > Namespace(classifier_batch_size=50, classifier_class_number=2, classifier_dropout_rate=0.5, classifier_epochs=50, classifier_grad_norm_clip=3, classifier_lr=0.01, cnn_n_gram_list=[3, 4, 5], cnn_output_channel=100, cuda=True, data_dir='./data/rt-polaritydata/', embed_pad_zero=False, embed_rand=False, embed_static=False, glove_alpha=0.75, glove_batch_size=4096, glove_context_size=5, glove_epochs=10, glove_lr=0.1, glove_process_num=1, glove_x_max=100, gpu_num=1, no_cuda=False, random_state=1505891124, seq_len=56, show_progress=True, skip_glove=True, unique_word_size=18765, word_edim=300)
+[INFO|model.py:97] 2017-09-20 16:05:29,783 > Model parameters
+[INFO|model.py:99] 2017-09-20 16:05:29,784 > torch.Size([18765, 300]), True
+[INFO|model.py:99] 2017-09-20 16:05:29,784 > torch.Size([100, 1, 3, 300]), True
+[INFO|model.py:99] 2017-09-20 16:05:29,784 > torch.Size([100]), True
+[INFO|model.py:99] 2017-09-20 16:05:29,784 > torch.Size([100, 1, 4, 300]), True
+[INFO|model.py:99] 2017-09-20 16:05:29,784 > torch.Size([100]), True
+[INFO|model.py:99] 2017-09-20 16:05:29,784 > torch.Size([100, 1, 5, 300]), True
+[INFO|model.py:99] 2017-09-20 16:05:29,785 > torch.Size([100]), True
+[INFO|model.py:99] 2017-09-20 16:05:29,785 > torch.Size([2, 300]), True
+[INFO|model.py:99] 2017-09-20 16:05:29,785 > torch.Size([2]), True
+[INFO|model.py:108] 2017-09-20 16:05:32,433 > Train Epoch:   1 	 train_total_loss: 155.7849 	 test_total_loss: 17.5718 	 test_acc: 0.500
+[INFO|model.py:108] 2017-09-20 16:05:34,044 > Train Epoch:   2 	 train_total_loss: 156.1435 	 test_total_loss: 17.5718 	 test_acc: 0.500
+[INFO|model.py:108] 2017-09-20 16:05:35,656 > Train Epoch:   3 	 train_total_loss: 156.1572 	 test_total_loss: 17.5718 	 test_acc: 0.500
+[INFO|model.py:108] 2017-09-20 16:05:37,269 > Train Epoch:   4 	 train_total_loss: 156.1436 	 test_total_loss: 17.5718 	 test_acc: 0.500
+[INFO|model.py:108] 2017-09-20 16:05:38,880 > Train Epoch:   5 	 train_total_loss: 156.1436 	 test_total_loss: 17.5718 	 test_acc: 0.500
+[INFO|model.py:108] 2017-09-20 16:05:40,492 > Train Epoch:   6 	 train_total_loss: 156.1654 	 test_total_loss: 17.5718 	 test_acc: 0.500
+[INFO|model.py:108] 2017-09-20 16:05:42,110 > Train Epoch:   7 	 train_total_loss: 156.1408 	 test_total_loss: 17.5718 	 test_acc: 0.500
+[INFO|model.py:108] 2017-09-20 16:05:43,731 > Train Epoch:   8 	 train_total_loss: 156.1518 	 test_total_loss: 17.5718 	 test_acc: 0.500
+[INFO|model.py:108] 2017-09-20 16:05:45,350 > Train Epoch:   9 	 train_total_loss: 156.1544 	 test_total_loss: 17.5718 	 test_acc: 0.500
+[INFO|model.py:108] 2017-09-20 16:05:46,966 > Train Epoch:  10 	 train_total_loss: 156.1545 	 test_total_loss: 17.5718 	 test_acc: 0.500
+[INFO|model.py:108] 2017-09-20 16:05:48,583 > Train Epoch:  11 	 train_total_loss: 156.1408 	 test_total_loss: 17.5718 	 test_acc: 0.500
