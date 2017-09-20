@@ -33,3 +33,6 @@ class SentenceClassifier(nn.Module):
         x = torch.cat(x, 1)
         x = self.dropout(x) # (N,len(Ks)*Co)
         return self.fcs(x) # (N,C), logit
+
+def run_SentenceClassifier():
+    return 0
