@@ -1,0 +1,91 @@
+[INFO|main.py:32] 2017-08-30 23:44:50,980 > Parameters : 
+[INFO|main.py:32] 2017-08-30 23:44:50,980 > Parameters : 
+[INFO|main.py:34] 2017-08-30 23:44:50,981 > Word embedding(GloVe) start
+[INFO|main.py:34] 2017-08-30 23:44:50,981 > Word embedding(GloVe) start
+[INFO|main.py:32] 2017-08-30 23:45:47,568 > Parameters : 
+[INFO|main.py:34] 2017-08-30 23:45:47,568 > Word embedding(GloVe) start
+[INFO|main.py:32] 2017-08-30 23:46:49,484 > Parameters : {'WORD_EMBED_SIZE': 300, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 256, 'GLOVE_NUM_EPOCHS': 100, 'LOWER_BOUND_OCCURENCE': 0}
+[INFO|main.py:34] 2017-08-30 23:46:49,484 > Word embedding(GloVe) start
+[INFO|main.py:32] 2017-08-30 23:48:56,386 > Parameters : {'WORD_EMBED_SIZE': 300, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 256, 'GLOVE_NUM_EPOCHS': 100, 'LOWER_BOUND_OCCURENCE': 0}
+[INFO|main.py:34] 2017-08-30 23:48:56,387 > Word embedding(GloVe) start
+[INFO|main.py:31] 2017-08-30 23:49:51,887 > Parameters : {'WORD_EMBED_SIZE': 300, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 256, 'GLOVE_NUM_EPOCHS': 100}
+[INFO|main.py:33] 2017-08-30 23:49:51,887 > Word embedding(GloVe) start
+[INFO|main.py:31] 2017-08-30 23:51:19,369 > Parameters : {'WORD_EMBED_SIZE': 300, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 256, 'GLOVE_NUM_EPOCHS': 100}
+[INFO|main.py:33] 2017-08-30 23:51:19,369 > Word embedding(GloVe) start
+[INFO|main.py:31] 2017-08-30 23:51:39,899 > Parameters : {'WORD_EMBED_SIZE': 300, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 256, 'GLOVE_NUM_EPOCHS': 100}
+[INFO|main.py:33] 2017-08-30 23:51:39,899 > Word embedding(GloVe) start
+[INFO|main.py:31] 2017-08-30 23:52:02,771 > Parameters : {'WORD_EMBED_SIZE': 300, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 256, 'GLOVE_NUM_EPOCHS': 100}
+[INFO|main.py:33] 2017-08-30 23:52:02,772 > Word embedding(GloVe) start
+[INFO|main.py:49] 2017-08-30 23:52:11,053 > torch.Size([18764, 300])
+[INFO|main.py:49] 2017-08-30 23:52:11,054 > torch.Size([18764, 1])
+[INFO|main.py:49] 2017-08-30 23:52:11,054 > torch.Size([18764, 300])
+[INFO|main.py:49] 2017-08-30 23:52:11,055 > torch.Size([18764, 1])
+[INFO|main.py:31] 2017-08-30 23:52:46,507 > Parameters : {'WORD_EMBED_SIZE': 300, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 256, 'GLOVE_NUM_EPOCHS': 100}
+[INFO|main.py:33] 2017-08-30 23:52:46,507 > Word embedding(GloVe) start
+[INFO|main.py:49] 2017-08-30 23:52:55,150 > torch.Size([18764, 300])
+[INFO|main.py:49] 2017-08-30 23:52:55,151 > torch.Size([18764, 1])
+[INFO|main.py:49] 2017-08-30 23:52:55,151 > torch.Size([18764, 300])
+[INFO|main.py:49] 2017-08-30 23:52:55,151 > torch.Size([18764, 1])
+[INFO|main.py:52] 2017-08-30 23:52:55,153 > Epoch 1 start
+[INFO|main.py:32] 2017-08-31 00:30:56,629 > Parameters : {'WORD_EMBED_SIZE': 300, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 1024, 'GLOVE_NUM_EPOCHS': 100}
+[INFO|main.py:34] 2017-08-31 00:30:56,630 > Word embedding(GloVe) start
+[INFO|main.py:33] 2017-08-31 00:31:27,715 > Parameters : {'WORD_EMBED_SIZE': 300, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 1024, 'GLOVE_NUM_EPOCHS': 100}
+[INFO|main.py:35] 2017-08-31 00:31:27,715 > Word embedding(GloVe) start
+[INFO|main.py:33] 2017-08-31 00:33:58,808 > Parameters : {'WORD_EMBED_SIZE': 300, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 1024, 'GLOVE_NUM_EPOCHS': 100}
+[INFO|main.py:35] 2017-08-31 00:33:58,809 > Word embedding(GloVe) start
+[INFO|main.py:40] 2017-08-31 00:34:00,084 > TOKENIZED_CORPUS_SIZE : 1000
+[INFO|main.py:41] 2017-08-31 00:34:00,084 > UNIQUE_WORD_SIZE : 556
+[INFO|main.py:33] 2017-08-31 00:34:42,933 > Parameters : {'WORD_EMBED_SIZE': 300, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 1024, 'GLOVE_NUM_EPOCHS': 100}
+[INFO|main.py:35] 2017-08-31 00:34:42,934 > Word embedding(GloVe) start
+[INFO|main.py:40] 2017-08-31 00:34:44,368 > TOKENIZED_CORPUS_SIZE : 1000
+[INFO|main.py:41] 2017-08-31 00:34:44,369 > UNIQUE_WORD_SIZE : 556
+[INFO|main.py:53] 2017-08-31 00:34:46,717 > torch.Size([556, 300])
+[INFO|main.py:53] 2017-08-31 00:34:46,717 > torch.Size([556, 1])
+[INFO|main.py:53] 2017-08-31 00:34:46,717 > torch.Size([556, 300])
+[INFO|main.py:53] 2017-08-31 00:34:46,717 > torch.Size([556, 1])
+[INFO|main.py:56] 2017-08-31 00:34:46,719 > Epoch 1 start
+[INFO|main.py:70] 2017-08-31 00:35:00,969 > Train Epoch: 1 	 Loss: 2.286890
+[INFO|main.py:56] 2017-08-31 00:35:01,026 > Epoch 2 start
+[INFO|main.py:70] 2017-08-31 00:35:07,381 > Train Epoch: 2 	 Loss: 0.839474
+[INFO|main.py:56] 2017-08-31 00:35:07,445 > Epoch 3 start
+[INFO|main.py:70] 2017-08-31 00:35:14,661 > Train Epoch: 3 	 Loss: 0.484091
+[INFO|main.py:56] 2017-08-31 00:35:14,784 > Epoch 4 start
+[INFO|main.py:70] 2017-08-31 00:35:21,986 > Train Epoch: 4 	 Loss: 0.312962
+[INFO|main.py:56] 2017-08-31 00:35:22,045 > Epoch 5 start
+[INFO|main.py:33] 2017-08-31 00:35:45,069 > Parameters : {'WORD_EMBED_SIZE': 300, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 1024, 'GLOVE_NUM_EPOCHS': 1}
+[INFO|main.py:35] 2017-08-31 00:35:45,069 > Word embedding(GloVe) start
+[INFO|main.py:40] 2017-08-31 00:35:47,091 > TOKENIZED_CORPUS_SIZE : 1000
+[INFO|main.py:41] 2017-08-31 00:35:47,091 > UNIQUE_WORD_SIZE : 556
+[INFO|main.py:53] 2017-08-31 00:35:49,375 > torch.Size([556, 300])
+[INFO|main.py:53] 2017-08-31 00:35:49,376 > torch.Size([556, 1])
+[INFO|main.py:53] 2017-08-31 00:35:49,376 > torch.Size([556, 300])
+[INFO|main.py:53] 2017-08-31 00:35:49,376 > torch.Size([556, 1])
+[INFO|main.py:56] 2017-08-31 00:35:49,378 > Epoch 1 start
+[INFO|main.py:70] 2017-08-31 00:36:02,302 > Train Epoch: 1 	 Loss: 2.232355
+[INFO|main.py:77] 2017-08-31 00:36:02,357 > Done
+[INFO|main.py:79] 2017-08-31 00:36:02,357 > Movie Review Sentence Classification start
+[INFO|main.py:33] 2017-08-31 00:37:42,004 > Parameters : {'WORD_EMBED_SIZE': 300, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 1024, 'GLOVE_NUM_EPOCHS': 50}
+[INFO|main.py:35] 2017-08-31 00:37:42,005 > Word embedding(GloVe) start
+[INFO|main.py:40] 2017-08-31 00:37:43,400 > TOKENIZED_CORPUS_SIZE : 217354
+[INFO|main.py:41] 2017-08-31 00:37:43,400 > UNIQUE_WORD_SIZE : 18764
+[INFO|main.py:53] 2017-08-31 00:37:51,150 > torch.Size([18764, 300])
+[INFO|main.py:53] 2017-08-31 00:37:51,151 > torch.Size([18764, 1])
+[INFO|main.py:53] 2017-08-31 00:37:51,152 > torch.Size([18764, 300])
+[INFO|main.py:53] 2017-08-31 00:37:51,152 > torch.Size([18764, 1])
+[INFO|main.py:56] 2017-08-31 00:37:51,154 > Epoch 1 start
+[INFO|main.py:70] 2017-08-31 03:24:56,636 > Train Epoch: 1 	 Loss: 0.314842
+[INFO|main.py:56] 2017-08-31 03:24:57,802 > Epoch 2 start
+[INFO|main.py:70] 2017-08-31 06:10:05,092 > Train Epoch: 2 	 Loss: 0.190504
+[INFO|main.py:56] 2017-08-31 06:10:06,223 > Epoch 3 start
+[INFO|main.py:70] 2017-08-31 08:55:28,549 > Train Epoch: 3 	 Loss: 0.163166
+[INFO|main.py:56] 2017-08-31 08:55:29,768 > Epoch 4 start
+[INFO|main.py:70] 2017-08-31 11:39:38,916 > Train Epoch: 4 	 Loss: 0.145612
+[INFO|main.py:56] 2017-08-31 11:39:40,224 > Epoch 5 start
+[INFO|main.py:70] 2017-08-31 14:22:40,504 > Train Epoch: 5 	 Loss: 0.133675
+[INFO|main.py:56] 2017-08-31 14:22:41,828 > Epoch 6 start
+[INFO|main.py:70] 2017-08-31 17:05:19,706 > Train Epoch: 6 	 Loss: 0.125322
+[INFO|main.py:56] 2017-08-31 17:05:20,817 > Epoch 7 start
+[INFO|main.py:70] 2017-08-31 19:48:14,760 > Train Epoch: 7 	 Loss: 0.119376
+[INFO|main.py:56] 2017-08-31 19:48:15,909 > Epoch 8 start
+[INFO|main.py:70] 2017-08-31 22:30:43,504 > Train Epoch: 8 	 Loss: 0.114758
+[INFO|main.py:56] 2017-08-31 22:30:44,617 > Epoch 9 start
