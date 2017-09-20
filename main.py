@@ -2,53 +2,55 @@ import os
 import datetime
 import numpy as np
 import torch
+from torch.autograd import Variable
+import torch.nn.functional as F
 from progressbar import ProgressBar
 from api.util import LoggerClass
-from api.model import GloVeClass
 from api.util import MovieReviewDataset
-from api.util import load_txt_and_tokenize
+from api.model import GloVeClass
+from api.model import SentenceClassifier
 
-print = LoggerClass("./20170831.log").logger.info
+print = LoggerClass("./20170901.log").logger.info
 
 os.environ["LD_LIBRARY_PATH"] = "/usr/local/cuda/lib64:/usr/local/lib:/usr/lib64"
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"] = "1,2,3,4"
 CUDA_AVAILABLE = torch.cuda.is_available()
 if not CUDA_AVAILABLE:
-	raise Exception("CUDA is not available")
+    raise Exception("CUDA is not available")
 torch.manual_seed(1)
 torch.cuda.manual_seed(1)
 
 PARAMS = {    
-	"EMBED_SIZE" : 300,
+    "EMBED_SIZE" : 300,
     "Skip_GloVe" : True,
 
-	"GLOVE_CONTEXT_SIZE" : 5,
-	"GLOVE_X_MAX" : 100,
-	"GLOVE_ALPHA" : 0.75,
-	"GLOVE_L_RATE" : 0.05,
-	"GLOVE_PROCESS_NUM" : 4,
-	"GLOVE_BATCH_SIZE" : 1024,
-	"GLOVE_NUM_EPOCHS" : 50,
+    "GLOVE_CONTEXT_SIZE" : 5,
+    "GLOVE_X_MAX" : 100,
+    "GLOVE_ALPHA" : 0.75,
+    "GLOVE_L_RATE" : 0.05,
+    "GLOVE_PROCESS_NUM" : 4,
+    "GLOVE_BATCH_SIZE" : 8096,
+    "GLOVE_NUM_EPOCHS" : 3,
 
     "CNN_CLASS_NUM" : 2,
-    "CNN_OUTPUT_CHANNEL_NUM" : 5,
+    "CNN_OUTPUT_CHANNEL_NUM" : 10,
     "CNN_N_GRAM_LIST" : [2,3,4,5],
-    "CNN_DROPOUT_RATE" : 0.5,
+    "CNN_DROPOUT_RATE" : 0.6,
     "CNN_EMBED_STATIC" : False,
     "CNN_L_RATE" : 0.01,
-    "CNN_NUM_EPOCHS" : 50,
-    "CNN_BATCH_SIZE" : 64
+    "CNN_NUM_EPOCHS" : 30,
+    "CNN_BATCH_SIZE" : 20
 }
 print("Parameters : {}".format(PARAMS))
 
 print("Word embedding(GloVe) start")
 MR = MovieReviewDataset(encoding = "ISO-8859-1")
-PARAM["UNIQUE_WORD_SIZE"] = MR.unique_word_list_size
+PARAMS["UNIQUE_WORD_SIZE"] = MR.unique_word_list_size
 print("TOKENIZED_CORPUS_SIZE : {}".format(len(MR.tokenized_corpus)))
 print("UNIQUE_WORD_SIZE : {}".format(MR.unique_word_list_size))
 
-if not PARAM["Skip_GloVe"]:
+if not PARAMS["Skip_GloVe"]:
     GloVe = GloVeClass(
     	MR.tokenized_corpus, 
     	MR.unique_word_list, 
@@ -68,7 +70,7 @@ if not PARAM["Skip_GloVe"]:
         losses = []
         update_time = ((MR.unique_word_list_size * MR.unique_word_list_size) // PARAMS["GLOVE_BATCH_SIZE"])
         p = ProgressBar(maxval = update_time).start()  
-        for i in range(1, update_time + 1):
+        for i in range(update_time):
             word_u_variable, word_v_variable, words_co_occurences, words_weights = GloVe.module.next_batch(PARAMS["GLOVE_BATCH_SIZE"])
             optimizer.zero_grad()
             forward_output = GloVe(word_u_variable, word_v_variable)
@@ -76,7 +78,7 @@ if not PARAM["Skip_GloVe"]:
             losses.append(loss.data[0])
             loss.backward()
             optimizer.step()
-            p.update(i)
+            p.update(i+1)
         p.finish()
         print("Train Epoch: {} \t Loss: {:.6f}".format(epoch + 1, np.mean(losses)))
         np.savez(
@@ -99,8 +101,11 @@ for p in CNN.parameters():
 print("CNN Training Start")
 optimizer = torch.optim.Adam(CNN.parameters(), lr=PARAMS["CNN_L_RATE"])
 train_data, train_label, datasize = MR.build_train_data()
+#print("{},{},{}".format(str(train_data), str(train_label), datasize))
 CNN.train()
 for epoch in range(PARAMS["CNN_NUM_EPOCHS"]):
+    print("Epoch {} start".format(epoch + 1))
+    losses = []
     indexes = np.random.permutation(datasize)
     updatetime = int(datasize/PARAMS["CNN_BATCH_SIZE"])+1
     p = ProgressBar(maxval = updatetime).start()
@@ -108,11 +113,19 @@ for epoch in range(PARAMS["CNN_NUM_EPOCHS"]):
         pos = i*PARAMS["CNN_BATCH_SIZE"]
         ids = indexes[pos:(pos+PARAMS["CNN_BATCH_SIZE"]) if (pos+PARAMS["CNN_BATCH_SIZE"]) < datasize else datasize]
         batch_train_data = Variable(torch.from_numpy(train_data[ids]).cuda())
-        batch_train_label = Variable(torch.from_numpy(train_label[ids]).cuda())
+        batch_train_label = Variable(torch.from_numpy(train_label[ids]).long().cuda())
         optimizer.zero_grad()
-        logit = model(batch_train_data)
-        #print('logit vector', logit.size())
-        #print('target vector', target.size())
+        logit = CNN(batch_train_data)
+        #print('batch_train_data vector:{}'.format(batch_train_data.size()))
+        #print('logit vector:{}'.format(logit.size()))
+        #print('batch_train_label vector:{}'.format(batch_train_label.size()))
         loss = F.cross_entropy(logit, batch_train_label)
+        losses.append(loss.data[0]) # dropout入れたままで評価しても意味ないだろう
         loss.backward()
         optimizer.step()
+        p.update(i+1)
+    p.finish()
+    print("Train Epoch: {} \t Loss: {:.6f}".format(epoch + 1, np.mean(losses)))
+    torch.save(CNN, "model/cnn.model")
+del CNN
+print("Done")

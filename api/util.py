@@ -17,7 +17,6 @@ class MovieReviewDataset():
         
         Example
             >> MR = MovieReview()
-            >> MR.raw_data["pos"][:10] # get 10 examples
     """
     def __init__(self, encoding):
         """
@@ -28,8 +27,8 @@ class MovieReviewDataset():
         self.download_file("http://www.cs.cornell.edu/people/pabo/movie-review-data/rt-polaritydata.tar.gz","./data/rt-polaritydata.tar.gz")
         self.extract_file("./data/rt-polaritydata.tar.gz")
         self.CORPUS_PATH = ["./data/rt-polaritydata/rt-polarity.pos", "./data/rt-polaritydata/rt-polarity.neg"]
-        self.processed_corpus_path = self.preprocessing(CORPUS_PATH, encoding)
-        self.tokenized_corpus = self.tokenize_all(processed_corpus_path)
+        self.processed_corpus_path = self.preprocessing(self.CORPUS_PATH, encoding)
+        self.tokenized_corpus = self.tokenize_all(self.processed_corpus_path)
         self.unique_word_list = np.unique(self.tokenized_corpus) 
         self.unique_word_list_size = self.unique_word_list.size   
         self.word_to_index = {word: index for index, word in enumerate(self.unique_word_list)}
@@ -80,7 +79,7 @@ class MovieReviewDataset():
         string = re.sub(r"\s{2,}", " ", string) # replace more than 2 whitespace with 1 whitespace   
         return string.strip().split()
 
-    def proprocessing(self, corpus_path, encoding):
+    def preprocessing(self, corpus_path, encoding):
         # UnicodeDecodeError: 'utf-8' codec can't decode byte
         # https://stackoverflow.com/questions/19699367/unicodedecodeerror-utf-8-codec-cant-decode-byte
         # get max line length
@@ -88,7 +87,7 @@ class MovieReviewDataset():
         for path in corpus_path:
             with open(path, encoding=encoding) as f:
                 for line in f:
-                    line = clean_str(line.lower().strip())
+                    line = self.clean_str(line.lower().strip())
                     if len(line) > mx: 
                         mx = len(line)
             f.close()   
@@ -98,11 +97,17 @@ class MovieReviewDataset():
             processed_corpus_path.append(new_path)
             with open(path, encoding=encoding) as f:
                 with open(new_path, 'w') as f_new:
+                    #debug = 0
                     for line in f:
-                        new_line = clean_str(line.lower().strip())
-                        new_line += " <PAD>"*(mx-len(new_line))
+                        cleaned_words = self.clean_str(line.lower().strip())
+                        new_line = cleaned_words[0]
+                        for word in cleaned_words[1:]:
+                            new_line += (" " + word)
+                        new_line += " <PAD>"*(mx - len(cleaned_words))
                         f_new.write(new_line+'\n')
-                        break # for dubug
+                        #debug+=1
+                        #if debug >= 100:
+                        #    break # for dubug
                 f_new.close() 
             f.close()               
         return processed_corpus_path
@@ -116,28 +121,32 @@ class MovieReviewDataset():
             with open(path) as f:
                 for line in f:
                     for word in line.strip().split():
-                        self.tokenized_corpus.append(word)
+                        tokenized_corpus.append(word)
             f.close()
         return tokenized_corpus
 
     def build_train_data(self):
         train_data = list()
         with open("./data/rt-polaritydata/rt-polarity.pos.processed") as f:
-            train_pos_data = np.array([[[word_to_index[word]] for word in line.strip().split()] for line in f])
-            train_pos_label = np.ones(train_pos_data.size)
+            train_pos_data = np.array([[self.word_to_index[word] for word in line.strip().split()] for line in f])
+            train_pos_label = np.ones(train_pos_data.shape[0])
         f.close()
         with open("./data/rt-polaritydata/rt-polarity.neg.processed") as f:
-            train_neg_data = np.array([[[word_to_index[word]] for word in line.strip().split()] for line in f])
-            train_neg_label = np.zeros(train_neg_data.size)
+            train_neg_data = np.array([[self.word_to_index[word] for word in line.strip().split()] for line in f])
+            train_neg_label = np.zeros(train_neg_data.shape[0])
         f.close()
-        datasize = train_pos_data.size + train_neg_data.size
+        #print(train_pos_data, train_pos_label)
+        #print(train_neg_data, train_neg_label)
+        train_data = np.vstack((train_pos_data, train_neg_data))
+        train_label = np.hstack((train_pos_label, train_neg_label))
+        datasize = train_pos_data.shape[0] + train_neg_data.shape[0]
         return train_data, train_label, datasize
 
 class LoggerClass():
     def __init__(self, logfilepath):
         super(LoggerClass, self).__init__()
         self.logger = logging.getLogger('mylogger')
-        fomatter = logging.Formatter('[%(levelname)s|%(filename)s:%(lineno)s] %(asctime)s > %(message)s')
+        fomatter = logging.Formatter('[%(filename)s:%(lineno)s] %(asctime)s > %(message)s')
         fileHandler = logging.FileHandler(logfilepath)
         streamHandler = logging.StreamHandler()
         fileHandler.setFormatter(fomatter)
