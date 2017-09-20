@@ -9,7 +9,7 @@ class CNNEncoder(nn.Module):
         self.config = config 
         self.embed = nn.Embedding(self.config.unique_word_size, self.config.word_edim)
         self.embed.weight.data.copy_(torch.from_numpy(word_embedding_array))
-        self.convs = nn.ModuleList([nn.Conv2d(1, self.cnn_output_channel, (n, self.config.word_edim)) for n in self.cnn_n_gram_list])
+        self.convs = nn.ModuleList([nn.Conv2d(1, self.config.cnn_output_channel, (n, self.config.word_edim)) for n in self.config.cnn_n_gram_list])
 
     def forward(self, x):
         x = self.embed(x) # (batch_size,seq_len,word_edim)
