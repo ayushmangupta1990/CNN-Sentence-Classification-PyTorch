@@ -24,9 +24,8 @@ class SentenceClassifier(nn.Module):
 
     def init_weights(self, init_range=0.1):
         #self.pred.weight.data.uniform_(-init_range, init_range)
-        #self.pred.bias.data.fill_(0)
+        self.pred.bias.data.fill_(0)
         self.pred.weight = xavier_normal(self.pred.weight)
-        self.pred.bias = xavier_normal(self.pred.bias)
 
     def forward(self, inp):
         outp = self.encoder.forward(inp) # [batch_size, len(self.config.cnn_n_gram_list)*self.config.cnn_output_channel]
