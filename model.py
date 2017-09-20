@@ -89,7 +89,7 @@ def run_SentenceClassifier(config, model, train_data, train_label, test_data, te
             total_loss += loss.data
             predictions = torch.max(output,1)[1].type_as(batch_label) # axis1での，つまり各データの中で最大の要素のindexを返す．(argmax)
             total_acc += predictions.eq(batch_label).cpu().sum().data[0]
-        return total_loss[0], total_pure_loss[0], total_acc/datasize
+        return total_loss[0], total_acc/datasize
 
     if config.show_progress:
         print("Model parameters")
