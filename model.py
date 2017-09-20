@@ -98,7 +98,12 @@ def run_SentenceClassifier(config, model, train_data, train_label, test_data, te
         for p in model.parameters():
             print("{}, {}".format(p.size(), p.requires_grad))
 
-    optimizer = optim.Adam(model.parameters(), lr=config.classifier_lr)
+    # filter that only require gradient decent
+    parameters = []
+    for p in filter(lambda p: p.requires_grad, model.parameters()):
+        parameters.append(p)
+
+    optimizer = optim.Adam(parameters, lr=config.classifier_lr)
 
     for epoch in range(config.classifier_epochs):
         model.train()
