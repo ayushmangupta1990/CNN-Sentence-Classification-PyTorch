@@ -9,21 +9,23 @@ from utils import print, ProgressBar
 
 class SentenceClassifier(nn.Module):
 
-    def __init__(self, config, word_embedding_array):
+    def __init__(self, config, word_embedding_array, dictionary):
         super(SentenceClassifier, self).__init__()
         self.config = config
-        self.build_model(word_embedding_array)
+        self.build_model(word_embedding_array, dictionary)
 
     def build_model(self, word_embedding_array):
-        self.encoder = CNNEncoder(self.config, word_embedding_array)
+        self.encoder = CNNEncoder(self.config, word_embedding_array, dictionary)
         self.pred = nn.Linear(len(self.config.cnn_n_gram_list)*self.config.cnn_output_channel, self.config.classifier_class_number)
         self.drop = nn.Dropout(self.config.classifier_dropout_rate)
         self.softmax = nn.Softmax()
         self.init_weights()
 
     def init_weights(self, init_range=0.1):
-        self.pred.weight.data.uniform_(-init_range, init_range)
-        self.pred.bias.data.fill_(0)
+        #self.pred.weight.data.uniform_(-init_range, init_range)
+        #self.pred.bias.data.fill_(0)
+        self.pred.weight = xavier_normal(self.pred.weight)
+        self.pred.bias = xavier_normal(self.pred.bias)
 
     def forward(self, inp):
         outp = self.encoder.forward(inp) # [batch_size, len(self.config.cnn_n_gram_list)*self.config.cnn_output_channel]

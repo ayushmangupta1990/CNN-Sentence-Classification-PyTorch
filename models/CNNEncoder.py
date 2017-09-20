@@ -5,14 +5,16 @@ from torch.autograd import Variable
 
 class CNNEncoder(nn.Module):
     
-    def __init__(self, config, word_embedding_array):
+    def __init__(self, config, word_embedding_array, dictionary):
         super(CNNEncoder, self).__init__()
         self.config = config 
+        self.dictionary = dictionary
         self.embed = nn.Embedding(self.config.unique_word_size, self.config.word_edim)
         self.embed.weight.data.copy_(torch.from_numpy(word_embedding_array))
         self.convs = nn.ModuleList([nn.Conv2d(1, self.config.cnn_output_channel, (n, self.config.word_edim)) for n in self.config.cnn_n_gram_list])
 
     def forward(self, x):
+        self.embed.weight.data[self.dictionary['word2idx']['<pad>']] = 0
         x = self.embed(x) # (batch_size,seq_len,word_edim)
         if self.config.embed_static:
             x = Variable(x)

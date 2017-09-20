@@ -144,7 +144,7 @@ if __name__ == '__main__':
     # この<pad>は零ベクトルとする．
     word_embedding_array[dictionary["word2idx"]['<pad>']] = 0
 
-    model = SentenceClassifier(config, word_embedding_array)
+    model = SentenceClassifier(config, word_embedding_array, dictionary)
     if config.cuda:
         if config.gpu_num > 1:
             model = torch.nn.DataParallel(model, device_ids=list(range(config.gpu_num))).cuda()
