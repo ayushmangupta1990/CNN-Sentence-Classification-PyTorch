@@ -3,7 +3,7 @@
 This is an implementation of [`Convolutional Neural Networks for Sentence Classification`](http://www.aclweb.org/anthology/D14-1181) with PyTorch. 
 (I used GLoVe for initializing the parameters of word's representations.)
 
-## Execution Log
+## Example : Execution Log
 
 ```
 [INFO|main.py:58] 2017-09-20 18:05:09,996 > Use 1 GPU 1
