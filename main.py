@@ -17,7 +17,7 @@ os.environ["LD_LIBRARY_PATH"] = "/usr/local/cuda/lib64:/usr/local/lib:/usr/lib64
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
-parser = argparse.ArgumentParser(description='Implementation of the paper "A Structured Self Attentive Sentence Embedding" in PyTorch')
+parser = argparse.ArgumentParser(description='CNN-Sentence-Classification-PyTorch')
 
 parser.add_argument('--word-edim', type=int, default=300, help='word embedding dimension (default: 300)')
 
