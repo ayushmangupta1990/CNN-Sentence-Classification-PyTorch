@@ -1,0 +1,50 @@
+[INFO|main.py:58] 2017-09-20 16:29:03,127 > Use 1 GPU 1
+[INFO|main.py:111] 2017-09-20 16:29:04,991 > Train data num : 9594, Test data num : 1068.
+[INFO|main.py:122] 2017-09-20 16:29:04,995 > Config
+[INFO|main.py:123] 2017-09-20 16:29:04,995 > Namespace(classifier_batch_size=50, classifier_class_number=2, classifier_dropout_rate=0.5, classifier_epochs=50, classifier_grad_norm_clip=3, classifier_lr=0.01, cnn_n_gram_list=[3, 4, 5], cnn_output_channel=100, cuda=True, data_dir='./data/rt-polaritydata/', embed_normalize=True, embed_pad_zero=True, embed_rand=False, embed_static=False, glove_alpha=0.75, glove_batch_size=4096, glove_context_size=5, glove_epochs=10, glove_lr=0.1, glove_process_num=1, glove_x_max=100, gpu_num=1, no_cuda=False, random_state=1505892543, seq_len=56, show_progress=True, skip_glove=True, unique_word_size=18765, word_edim=300)
+[INFO|model.py:97] 2017-09-20 16:29:08,251 > Model parameters
+[INFO|model.py:99] 2017-09-20 16:29:08,252 > torch.Size([18765, 300]), True
+[INFO|model.py:99] 2017-09-20 16:29:08,252 > torch.Size([100, 1, 3, 300]), True
+[INFO|model.py:99] 2017-09-20 16:29:08,252 > torch.Size([100]), True
+[INFO|model.py:99] 2017-09-20 16:29:08,252 > torch.Size([100, 1, 4, 300]), True
+[INFO|model.py:99] 2017-09-20 16:29:08,252 > torch.Size([100]), True
+[INFO|model.py:99] 2017-09-20 16:29:08,253 > torch.Size([100, 1, 5, 300]), True
+[INFO|model.py:99] 2017-09-20 16:29:08,253 > torch.Size([100]), True
+[INFO|model.py:99] 2017-09-20 16:29:08,253 > torch.Size([2, 300]), True
+[INFO|model.py:99] 2017-09-20 16:29:08,253 > torch.Size([2]), True
+[INFO|model.py:113] 2017-09-20 16:29:10,974 > Train Epoch:   1 	 train_total_loss: 127.0202 	 test_total_loss: 15.4031 	 test_acc: 0.605
+[INFO|model.py:113] 2017-09-20 16:29:12,612 > Train Epoch:   2 	 train_total_loss: 133.4031 	 test_total_loss: 16.9849 	 test_acc: 0.552
+[INFO|model.py:113] 2017-09-20 16:29:14,251 > Train Epoch:   3 	 train_total_loss: 132.4007 	 test_total_loss: 15.4335 	 test_acc: 0.605
+[INFO|model.py:113] 2017-09-20 16:29:15,890 > Train Epoch:   4 	 train_total_loss: 143.0685 	 test_total_loss: 15.6355 	 test_acc: 0.597
+[INFO|model.py:113] 2017-09-20 16:29:17,501 > Train Epoch:   5 	 train_total_loss: 136.0618 	 test_total_loss: 15.6546 	 test_acc: 0.596
+[INFO|model.py:113] 2017-09-20 16:29:19,100 > Train Epoch:   6 	 train_total_loss: 137.5734 	 test_total_loss: 16.4431 	 test_acc: 0.556
+[INFO|model.py:113] 2017-09-20 16:29:20,701 > Train Epoch:   7 	 train_total_loss: 139.1050 	 test_total_loss: 16.5051 	 test_acc: 0.568
+[INFO|model.py:113] 2017-09-20 16:29:22,301 > Train Epoch:   8 	 train_total_loss: 133.2366 	 test_total_loss: 16.4991 	 test_acc: 0.570
+[INFO|model.py:113] 2017-09-20 16:29:23,904 > Train Epoch:   9 	 train_total_loss: 141.8351 	 test_total_loss: 17.0940 	 test_acc: 0.544
+[INFO|model.py:113] 2017-09-20 16:29:25,511 > Train Epoch:  10 	 train_total_loss: 137.0109 	 test_total_loss: 16.2075 	 test_acc: 0.581
+[INFO|model.py:113] 2017-09-20 16:29:27,111 > Train Epoch:  11 	 train_total_loss: 139.3623 	 test_total_loss: 16.7474 	 test_acc: 0.540
+[INFO|model.py:113] 2017-09-20 16:29:28,718 > Train Epoch:  12 	 train_total_loss: 147.2251 	 test_total_loss: 17.1273 	 test_acc: 0.522
+[INFO|model.py:113] 2017-09-20 16:29:30,325 > Train Epoch:  13 	 train_total_loss: 152.6460 	 test_total_loss: 17.4518 	 test_acc: 0.506
+[INFO|model.py:113] 2017-09-20 16:29:31,935 > Train Epoch:  14 	 train_total_loss: 154.2288 	 test_total_loss: 17.3918 	 test_acc: 0.508
+[INFO|model.py:113] 2017-09-20 16:29:33,546 > Train Epoch:  15 	 train_total_loss: 154.4313 	 test_total_loss: 17.5718 	 test_acc: 0.500
+[INFO|model.py:113] 2017-09-20 16:29:35,154 > Train Epoch:  16 	 train_total_loss: 153.8101 	 test_total_loss: 16.9230 	 test_acc: 0.534
+[INFO|model.py:113] 2017-09-20 16:29:36,761 > Train Epoch:  17 	 train_total_loss: 137.8307 	 test_total_loss: 15.9184 	 test_acc: 0.582
+[INFO|model.py:113] 2017-09-20 16:29:38,358 > Train Epoch:  18 	 train_total_loss: 147.7225 	 test_total_loss: 16.7229 	 test_acc: 0.543
+[INFO|model.py:113] 2017-09-20 16:29:39,967 > Train Epoch:  19 	 train_total_loss: 136.9223 	 test_total_loss: 15.2696 	 test_acc: 0.616
+[INFO|model.py:113] 2017-09-20 16:29:41,578 > Train Epoch:  20 	 train_total_loss: 139.0159 	 test_total_loss: 16.9008 	 test_acc: 0.535
+[INFO|model.py:113] 2017-09-20 16:29:43,188 > Train Epoch:  21 	 train_total_loss: 143.7783 	 test_total_loss: 16.4230 	 test_acc: 0.557
+[INFO|model.py:113] 2017-09-20 16:29:44,795 > Train Epoch:  22 	 train_total_loss: 138.3301 	 test_total_loss: 15.7762 	 test_acc: 0.597
+[INFO|model.py:113] 2017-09-20 16:29:46,409 > Train Epoch:  23 	 train_total_loss: 134.9727 	 test_total_loss: 16.3426 	 test_acc: 0.561
+[INFO|model.py:113] 2017-09-20 16:29:48,021 > Train Epoch:  24 	 train_total_loss: 142.3965 	 test_total_loss: 15.5295 	 test_acc: 0.604
+[INFO|model.py:113] 2017-09-20 16:29:49,633 > Train Epoch:  25 	 train_total_loss: 134.7734 	 test_total_loss: 16.9184 	 test_acc: 0.551
+[INFO|model.py:113] 2017-09-20 16:29:51,245 > Train Epoch:  26 	 train_total_loss: 143.2209 	 test_total_loss: 17.1895 	 test_acc: 0.541
+[INFO|model.py:113] 2017-09-20 16:29:52,856 > Train Epoch:  27 	 train_total_loss: 148.2102 	 test_total_loss: 17.8362 	 test_acc: 0.516
+[INFO|model.py:113] 2017-09-20 16:29:54,471 > Train Epoch:  28 	 train_total_loss: 150.9914 	 test_total_loss: 17.8362 	 test_acc: 0.516
+[INFO|model.py:113] 2017-09-20 16:29:56,085 > Train Epoch:  29 	 train_total_loss: 149.3614 	 test_total_loss: 17.8562 	 test_acc: 0.515
+[INFO|model.py:113] 2017-09-20 16:29:57,687 > Train Epoch:  30 	 train_total_loss: 151.3634 	 test_total_loss: 17.8362 	 test_acc: 0.516
+[INFO|model.py:113] 2017-09-20 16:29:59,300 > Train Epoch:  31 	 train_total_loss: 149.6637 	 test_total_loss: 17.4445 	 test_acc: 0.531
+[INFO|model.py:113] 2017-09-20 16:30:00,914 > Train Epoch:  32 	 train_total_loss: 145.9707 	 test_total_loss: 17.5806 	 test_acc: 0.526
+[INFO|model.py:113] 2017-09-20 16:30:02,529 > Train Epoch:  33 	 train_total_loss: 147.3062 	 test_total_loss: 17.4451 	 test_acc: 0.531
+[INFO|model.py:113] 2017-09-20 16:30:04,146 > Train Epoch:  34 	 train_total_loss: 139.9558 	 test_total_loss: 16.0962 	 test_acc: 0.582
+[INFO|model.py:113] 2017-09-20 16:30:05,762 > Train Epoch:  35 	 train_total_loss: 144.0115 	 test_total_loss: 17.0940 	 test_acc: 0.544
+[INFO|model.py:113] 2017-09-20 16:30:07,380 > Train Epoch:  36 	 train_total_loss: 144.5650 	 test_total_loss: 17.6606 	 test_acc: 0.522

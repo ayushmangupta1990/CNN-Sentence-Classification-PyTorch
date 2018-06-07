@@ -1,0 +1,25 @@
+[INFO|main.py:54] 2017-09-20 13:56:22,368 > Use 1 GPU 1
+[INFO|main.py:107] 2017-09-20 13:56:24,129 > Train data num : 9594, Test data num : 1068.
+[INFO|main.py:118] 2017-09-20 13:56:24,132 > Config
+[INFO|main.py:119] 2017-09-20 13:56:24,132 > Namespace(classifier_batch_size=50, classifier_class_number=2, classifier_dropout_rate=0.5, classifier_epochs=50, classifier_grad_norm_clip=3, classifier_lr=0.01, cnn_n_gram_list=[3, 4, 5], cnn_output_channel=100, cuda=True, data_dir='./data/rt-polaritydata/', embed_static=False, glove_alpha=0.75, glove_batch_size=4096, glove_context_size=5, glove_epochs=10, glove_lr=0.1, glove_process_num=1, glove_x_max=100, gpu_num=1, no_cuda=False, random_state=1505883382, seq_len=56, show_progress=True, skip_glove=False, unique_word_size=18765, word_edim=300)
+[INFO|GloVe.py:126] 2017-09-20 13:56:35,488 > Glove model parameters
+[INFO|GloVe.py:128] 2017-09-20 13:56:35,489 > torch.Size([18765, 300])
+[INFO|GloVe.py:128] 2017-09-20 13:56:35,489 > torch.Size([18765, 1])
+[INFO|GloVe.py:128] 2017-09-20 13:56:35,490 > torch.Size([18765, 300])
+[INFO|GloVe.py:128] 2017-09-20 13:56:35,490 > torch.Size([18765, 1])
+[INFO|GloVe.py:131] 2017-09-20 13:56:35,492 > Train start
+[INFO|GloVe.py:132] 2017-09-20 13:56:35,492 > Timestamp: 2017-09-20 13:56:35
+[INFO|GloVe.py:153] 2017-09-20 14:50:22,694 > Timestamp: 2017-09-20 14:50:22
+[INFO|GloVe.py:154] 2017-09-20 14:50:22,703 > Train Epoch: 1 	 Loss: 2.195240
+[INFO|GloVe.py:153] 2017-09-20 15:44:12,182 > Timestamp: 2017-09-20 15:44:12
+[INFO|GloVe.py:154] 2017-09-20 15:44:12,186 > Train Epoch: 2 	 Loss: 0.761805
+[INFO|GloVe.py:153] 2017-09-20 16:38:35,022 > Timestamp: 2017-09-20 16:38:35
+[INFO|GloVe.py:154] 2017-09-20 16:38:35,026 > Train Epoch: 3 	 Loss: 0.634667
+[INFO|GloVe.py:153] 2017-09-20 17:32:10,931 > Timestamp: 2017-09-20 17:32:10
+[INFO|GloVe.py:154] 2017-09-20 17:32:10,935 > Train Epoch: 4 	 Loss: 0.556820
+[INFO|GloVe.py:153] 2017-09-20 18:25:43,070 > Timestamp: 2017-09-20 18:25:43
+[INFO|GloVe.py:154] 2017-09-20 18:25:43,075 > Train Epoch: 5 	 Loss: 0.509303
+[INFO|GloVe.py:153] 2017-09-20 19:19:23,050 > Timestamp: 2017-09-20 19:19:23
+[INFO|GloVe.py:154] 2017-09-20 19:19:23,055 > Train Epoch: 6 	 Loss: 0.478795
+[INFO|GloVe.py:153] 2017-09-20 20:12:46,910 > Timestamp: 2017-09-20 20:12:46
+[INFO|GloVe.py:154] 2017-09-20 20:12:46,914 > Train Epoch: 7 	 Loss: 0.456788

@@ -1,0 +1,739 @@
+[INFO|main.py:45] 2017-09-01 15:00:56,687 > Parameters : {'EMBED_SIZE': 300, 'Skip_GloVe': False, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 1024, 'GLOVE_NUM_EPOCHS': 2, 'CNN_CLASS_NUM': 2, 'CNN_OUTPUT_CHANNEL_NUM': 5, 'CNN_N_GRAM_LIST': [2, 3, 4, 5], 'CNN_DROPOUT_RATE': 0.5, 'CNN_EMBED_STATIC': False, 'CNN_L_RATE': 0.01, 'CNN_NUM_EPOCHS': 2, 'CNN_BATCH_SIZE': 64}
+[INFO|main.py:47] 2017-09-01 15:00:56,688 > Word embedding(GloVe) start
+[INFO|main.py:50] 2017-09-01 15:00:57,342 > TOKENIZED_CORPUS_SIZE : 1232
+[INFO|main.py:51] 2017-09-01 15:00:57,342 > UNIQUE_WORD_SIZE : 253
+[INFO|main.py:65] 2017-09-01 15:00:59,508 > torch.Size([253, 300])
+[INFO|main.py:65] 2017-09-01 15:00:59,508 > torch.Size([253, 1])
+[INFO|main.py:65] 2017-09-01 15:00:59,508 > torch.Size([253, 300])
+[INFO|main.py:65] 2017-09-01 15:00:59,508 > torch.Size([253, 1])
+[INFO|main.py:66] 2017-09-01 15:00:59,509 > GloVe Training Start
+[INFO|main.py:69] 2017-09-01 15:00:59,509 > Epoch 1 start
+[INFO|main.py:83] 2017-09-01 15:01:08,576 > Train Epoch: 1 	 Loss: 6.934841
+[INFO|main.py:69] 2017-09-01 15:01:08,606 > Epoch 2 start
+[INFO|main.py:83] 2017-09-01 15:01:09,955 > Train Epoch: 2 	 Loss: 1.950283
+[INFO|main.py:91] 2017-09-01 15:01:09,983 > Done
+[INFO|main.py:93] 2017-09-01 15:01:09,984 > Movie Review Sentence Classification start
+[INFO|main.py:100] 2017-09-01 15:01:09,996 > torch.Size([253, 300])
+[INFO|main.py:100] 2017-09-01 15:01:09,996 > torch.Size([5, 1, 2, 300])
+[INFO|main.py:100] 2017-09-01 15:01:09,996 > torch.Size([5])
+[INFO|main.py:100] 2017-09-01 15:01:09,997 > torch.Size([5, 1, 3, 300])
+[INFO|main.py:100] 2017-09-01 15:01:09,997 > torch.Size([5])
+[INFO|main.py:100] 2017-09-01 15:01:09,997 > torch.Size([5, 1, 4, 300])
+[INFO|main.py:100] 2017-09-01 15:01:09,997 > torch.Size([5])
+[INFO|main.py:100] 2017-09-01 15:01:09,997 > torch.Size([5, 1, 5, 300])
+[INFO|main.py:100] 2017-09-01 15:01:09,997 > torch.Size([5])
+[INFO|main.py:100] 2017-09-01 15:01:09,998 > torch.Size([2, 20])
+[INFO|main.py:100] 2017-09-01 15:01:09,998 > torch.Size([2])
+[INFO|main.py:101] 2017-09-01 15:01:09,998 > CNN Training Start
+[INFO|main.py:118] 2017-09-01 15:01:14,300 > batch_train_data vector:torch.Size([22, 56])
+[INFO|main.py:119] 2017-09-01 15:01:14,300 > logit vector:torch.Size([22, 2])
+[INFO|main.py:120] 2017-09-01 15:01:14,301 > batch_train_label vector:torch.Size([22])
+[INFO|main.py:118] 2017-09-01 15:01:14,336 > batch_train_data vector:torch.Size([22, 56])
+[INFO|main.py:119] 2017-09-01 15:01:14,336 > logit vector:torch.Size([22, 2])
+[INFO|main.py:120] 2017-09-01 15:01:14,337 > batch_train_label vector:torch.Size([22])
+[INFO|main.py:45] 2017-09-01 15:03:46,533 > Parameters : {'EMBED_SIZE': 300, 'Skip_GloVe': False, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 1024, 'GLOVE_NUM_EPOCHS': 2, 'CNN_CLASS_NUM': 2, 'CNN_OUTPUT_CHANNEL_NUM': 5, 'CNN_N_GRAM_LIST': [2, 3, 4, 5], 'CNN_DROPOUT_RATE': 0.5, 'CNN_EMBED_STATIC': False, 'CNN_L_RATE': 0.01, 'CNN_NUM_EPOCHS': 2, 'CNN_BATCH_SIZE': 64}
+[INFO|main.py:47] 2017-09-01 15:03:46,533 > Word embedding(GloVe) start
+[INFO|main.py:50] 2017-09-01 15:03:47,286 > TOKENIZED_CORPUS_SIZE : 1232
+[INFO|main.py:51] 2017-09-01 15:03:47,287 > UNIQUE_WORD_SIZE : 253
+[INFO|main.py:65] 2017-09-01 15:03:49,535 > torch.Size([253, 300])
+[INFO|main.py:65] 2017-09-01 15:03:49,536 > torch.Size([253, 1])
+[INFO|main.py:65] 2017-09-01 15:03:49,536 > torch.Size([253, 300])
+[INFO|main.py:65] 2017-09-01 15:03:49,536 > torch.Size([253, 1])
+[INFO|main.py:66] 2017-09-01 15:03:49,536 > GloVe Training Start
+[INFO|main.py:69] 2017-09-01 15:03:49,537 > Epoch 1 start
+[INFO|main.py:83] 2017-09-01 15:03:58,453 > Train Epoch: 1 	 Loss: 7.459649
+[INFO|main.py:69] 2017-09-01 15:03:58,490 > Epoch 2 start
+[INFO|main.py:83] 2017-09-01 15:03:59,852 > Train Epoch: 2 	 Loss: 2.108686
+[INFO|main.py:91] 2017-09-01 15:03:59,888 > Done
+[INFO|main.py:93] 2017-09-01 15:03:59,888 > Movie Review Sentence Classification start
+[INFO|main.py:100] 2017-09-01 15:03:59,900 > torch.Size([253, 300])
+[INFO|main.py:100] 2017-09-01 15:03:59,900 > torch.Size([5, 1, 2, 300])
+[INFO|main.py:100] 2017-09-01 15:03:59,901 > torch.Size([5])
+[INFO|main.py:100] 2017-09-01 15:03:59,901 > torch.Size([5, 1, 3, 300])
+[INFO|main.py:100] 2017-09-01 15:03:59,901 > torch.Size([5])
+[INFO|main.py:100] 2017-09-01 15:03:59,901 > torch.Size([5, 1, 4, 300])
+[INFO|main.py:100] 2017-09-01 15:03:59,901 > torch.Size([5])
+[INFO|main.py:100] 2017-09-01 15:03:59,901 > torch.Size([5, 1, 5, 300])
+[INFO|main.py:100] 2017-09-01 15:03:59,902 > torch.Size([5])
+[INFO|main.py:100] 2017-09-01 15:03:59,902 > torch.Size([2, 20])
+[INFO|main.py:100] 2017-09-01 15:03:59,902 > torch.Size([2])
+[INFO|main.py:101] 2017-09-01 15:03:59,902 > CNN Training Start
+[INFO|main.py:108] 2017-09-01 15:03:59,923 > Epoch 1 start
+[INFO|main.py:120] 2017-09-01 15:04:04,182 > batch_train_data vector:torch.Size([22, 56])
+[INFO|main.py:121] 2017-09-01 15:04:04,182 > logit vector:torch.Size([22, 2])
+[INFO|main.py:122] 2017-09-01 15:04:04,183 > batch_train_label vector:torch.Size([22])
+[INFO|main.py:129] 2017-09-01 15:04:04,195 > Train Epoch: 1 	 Loss: 0.687533
+[INFO|main.py:108] 2017-09-01 15:04:04,195 > Epoch 2 start
+[INFO|main.py:120] 2017-09-01 15:04:04,207 > batch_train_data vector:torch.Size([22, 56])
+[INFO|main.py:121] 2017-09-01 15:04:04,208 > logit vector:torch.Size([22, 2])
+[INFO|main.py:122] 2017-09-01 15:04:04,208 > batch_train_label vector:torch.Size([22])
+[INFO|main.py:129] 2017-09-01 15:04:04,223 > Train Epoch: 2 	 Loss: 1.061589
+[INFO|main.py:45] 2017-09-01 15:05:05,167 > Parameters : {'EMBED_SIZE': 300, 'Skip_GloVe': False, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 1024, 'GLOVE_NUM_EPOCHS': 5, 'CNN_CLASS_NUM': 2, 'CNN_OUTPUT_CHANNEL_NUM': 5, 'CNN_N_GRAM_LIST': [2, 3, 4, 5], 'CNN_DROPOUT_RATE': 0.5, 'CNN_EMBED_STATIC': False, 'CNN_L_RATE': 0.01, 'CNN_NUM_EPOCHS': 5, 'CNN_BATCH_SIZE': 64}
+[INFO|main.py:47] 2017-09-01 15:05:05,168 > Word embedding(GloVe) start
+[INFO|main.py:50] 2017-09-01 15:05:05,954 > TOKENIZED_CORPUS_SIZE : 5712
+[INFO|main.py:51] 2017-09-01 15:05:05,954 > UNIQUE_WORD_SIZE : 961
+[INFO|main.py:65] 2017-09-01 15:05:08,273 > torch.Size([961, 300])
+[INFO|main.py:65] 2017-09-01 15:05:08,273 > torch.Size([961, 1])
+[INFO|main.py:65] 2017-09-01 15:05:08,273 > torch.Size([961, 300])
+[INFO|main.py:65] 2017-09-01 15:05:08,273 > torch.Size([961, 1])
+[INFO|main.py:66] 2017-09-01 15:05:08,273 > GloVe Training Start
+[INFO|main.py:69] 2017-09-01 15:05:08,275 > Epoch 1 start
+[INFO|main.py:83] 2017-09-01 15:05:34,403 > Train Epoch: 1 	 Loss: 2.211434
+[INFO|main.py:69] 2017-09-01 15:05:34,485 > Epoch 2 start
+[INFO|main.py:83] 2017-09-01 15:05:52,244 > Train Epoch: 2 	 Loss: 0.832436
+[INFO|main.py:69] 2017-09-01 15:05:52,327 > Epoch 3 start
+[INFO|main.py:83] 2017-09-01 15:06:09,953 > Train Epoch: 3 	 Loss: 0.476816
+[INFO|main.py:69] 2017-09-01 15:06:10,027 > Epoch 4 start
+[INFO|main.py:83] 2017-09-01 15:06:27,180 > Train Epoch: 4 	 Loss: 0.327316
+[INFO|main.py:69] 2017-09-01 15:06:27,262 > Epoch 5 start
+[INFO|main.py:83] 2017-09-01 15:06:47,351 > Train Epoch: 5 	 Loss: 0.255278
+[INFO|main.py:91] 2017-09-01 15:06:47,458 > Done
+[INFO|main.py:93] 2017-09-01 15:06:47,458 > Movie Review Sentence Classification start
+[INFO|main.py:100] 2017-09-01 15:06:47,501 > torch.Size([961, 300])
+[INFO|main.py:100] 2017-09-01 15:06:47,501 > torch.Size([5, 1, 2, 300])
+[INFO|main.py:100] 2017-09-01 15:06:47,502 > torch.Size([5])
+[INFO|main.py:100] 2017-09-01 15:06:47,502 > torch.Size([5, 1, 3, 300])
+[INFO|main.py:100] 2017-09-01 15:06:47,502 > torch.Size([5])
+[INFO|main.py:100] 2017-09-01 15:06:47,502 > torch.Size([5, 1, 4, 300])
+[INFO|main.py:100] 2017-09-01 15:06:47,502 > torch.Size([5])
+[INFO|main.py:100] 2017-09-01 15:06:47,503 > torch.Size([5, 1, 5, 300])
+[INFO|main.py:100] 2017-09-01 15:06:47,503 > torch.Size([5])
+[INFO|main.py:100] 2017-09-01 15:06:47,503 > torch.Size([2, 20])
+[INFO|main.py:100] 2017-09-01 15:06:47,503 > torch.Size([2])
+[INFO|main.py:101] 2017-09-01 15:06:47,503 > CNN Training Start
+[INFO|main.py:108] 2017-09-01 15:06:47,526 > Epoch 1 start
+[INFO|main.py:120] 2017-09-01 15:06:51,324 > batch_train_data vector:torch.Size([64, 56])
+[INFO|main.py:121] 2017-09-01 15:06:51,324 > logit vector:torch.Size([64, 2])
+[INFO|main.py:122] 2017-09-01 15:06:51,324 > batch_train_label vector:torch.Size([64])
+[INFO|main.py:120] 2017-09-01 15:06:51,350 > batch_train_data vector:torch.Size([38, 56])
+[INFO|main.py:121] 2017-09-01 15:06:51,350 > logit vector:torch.Size([38, 2])
+[INFO|main.py:122] 2017-09-01 15:06:51,350 > batch_train_label vector:torch.Size([38])
+[INFO|main.py:129] 2017-09-01 15:06:51,361 > Train Epoch: 1 	 Loss: 1.184604
+[INFO|main.py:108] 2017-09-01 15:06:51,362 > Epoch 2 start
+[INFO|main.py:120] 2017-09-01 15:06:51,373 > batch_train_data vector:torch.Size([64, 56])
+[INFO|main.py:121] 2017-09-01 15:06:51,373 > logit vector:torch.Size([64, 2])
+[INFO|main.py:122] 2017-09-01 15:06:51,373 > batch_train_label vector:torch.Size([64])
+[INFO|main.py:120] 2017-09-01 15:06:51,397 > batch_train_data vector:torch.Size([38, 56])
+[INFO|main.py:121] 2017-09-01 15:06:51,397 > logit vector:torch.Size([38, 2])
+[INFO|main.py:122] 2017-09-01 15:06:51,397 > batch_train_label vector:torch.Size([38])
+[INFO|main.py:129] 2017-09-01 15:06:51,408 > Train Epoch: 2 	 Loss: 0.687162
+[INFO|main.py:108] 2017-09-01 15:06:51,408 > Epoch 3 start
+[INFO|main.py:120] 2017-09-01 15:06:51,420 > batch_train_data vector:torch.Size([64, 56])
+[INFO|main.py:121] 2017-09-01 15:06:51,420 > logit vector:torch.Size([64, 2])
+[INFO|main.py:122] 2017-09-01 15:06:51,420 > batch_train_label vector:torch.Size([64])
+[INFO|main.py:120] 2017-09-01 15:06:51,444 > batch_train_data vector:torch.Size([38, 56])
+[INFO|main.py:121] 2017-09-01 15:06:51,444 > logit vector:torch.Size([38, 2])
+[INFO|main.py:122] 2017-09-01 15:06:51,444 > batch_train_label vector:torch.Size([38])
+[INFO|main.py:129] 2017-09-01 15:06:51,455 > Train Epoch: 3 	 Loss: 0.635292
+[INFO|main.py:108] 2017-09-01 15:06:51,455 > Epoch 4 start
+[INFO|main.py:120] 2017-09-01 15:06:51,467 > batch_train_data vector:torch.Size([64, 56])
+[INFO|main.py:121] 2017-09-01 15:06:51,467 > logit vector:torch.Size([64, 2])
+[INFO|main.py:122] 2017-09-01 15:06:51,467 > batch_train_label vector:torch.Size([64])
+[INFO|main.py:120] 2017-09-01 15:06:51,490 > batch_train_data vector:torch.Size([38, 56])
+[INFO|main.py:121] 2017-09-01 15:06:51,491 > logit vector:torch.Size([38, 2])
+[INFO|main.py:122] 2017-09-01 15:06:51,491 > batch_train_label vector:torch.Size([38])
+[INFO|main.py:129] 2017-09-01 15:06:51,502 > Train Epoch: 4 	 Loss: 0.539913
+[INFO|main.py:108] 2017-09-01 15:06:51,502 > Epoch 5 start
+[INFO|main.py:120] 2017-09-01 15:06:51,513 > batch_train_data vector:torch.Size([64, 56])
+[INFO|main.py:121] 2017-09-01 15:06:51,513 > logit vector:torch.Size([64, 2])
+[INFO|main.py:122] 2017-09-01 15:06:51,513 > batch_train_label vector:torch.Size([64])
+[INFO|main.py:120] 2017-09-01 15:06:51,536 > batch_train_data vector:torch.Size([38, 56])
+[INFO|main.py:121] 2017-09-01 15:06:51,537 > logit vector:torch.Size([38, 2])
+[INFO|main.py:122] 2017-09-01 15:06:51,537 > batch_train_label vector:torch.Size([38])
+[INFO|main.py:129] 2017-09-01 15:06:51,547 > Train Epoch: 5 	 Loss: 0.445727
+[INFO|main.py:45] 2017-09-01 15:08:54,071 > Parameters : {'EMBED_SIZE': 300, 'Skip_GloVe': False, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 1024, 'GLOVE_NUM_EPOCHS': 5, 'CNN_CLASS_NUM': 2, 'CNN_OUTPUT_CHANNEL_NUM': 5, 'CNN_N_GRAM_LIST': [2, 3, 4, 5], 'CNN_DROPOUT_RATE': 0.5, 'CNN_EMBED_STATIC': False, 'CNN_L_RATE': 0.01, 'CNN_NUM_EPOCHS': 5, 'CNN_BATCH_SIZE': 32}
+[INFO|main.py:47] 2017-09-01 15:08:54,072 > Word embedding(GloVe) start
+[INFO|main.py:50] 2017-09-01 15:08:54,828 > TOKENIZED_CORPUS_SIZE : 5600
+[INFO|main.py:51] 2017-09-01 15:08:54,828 > UNIQUE_WORD_SIZE : 944
+[INFO|main.py:65] 2017-09-01 15:08:57,361 > torch.Size([944, 300])
+[INFO|main.py:65] 2017-09-01 15:08:57,361 > torch.Size([944, 1])
+[INFO|main.py:65] 2017-09-01 15:08:57,361 > torch.Size([944, 300])
+[INFO|main.py:65] 2017-09-01 15:08:57,361 > torch.Size([944, 1])
+[INFO|main.py:66] 2017-09-01 15:08:57,362 > GloVe Training Start
+[INFO|main.py:69] 2017-09-01 15:08:57,363 > Epoch 1 start
+[INFO|main.py:83] 2017-09-01 15:09:24,563 > Train Epoch: 1 	 Loss: 2.278860
+[INFO|main.py:69] 2017-09-01 15:09:24,654 > Epoch 2 start
+[INFO|main.py:83] 2017-09-01 15:09:45,540 > Train Epoch: 2 	 Loss: 0.808907
+[INFO|main.py:69] 2017-09-01 15:09:45,631 > Epoch 3 start
+[INFO|main.py:83] 2017-09-01 15:10:06,456 > Train Epoch: 3 	 Loss: 0.493569
+[INFO|main.py:69] 2017-09-01 15:10:06,544 > Epoch 4 start
+[INFO|main.py:83] 2017-09-01 15:10:27,427 > Train Epoch: 4 	 Loss: 0.331844
+[INFO|main.py:69] 2017-09-01 15:10:27,548 > Epoch 5 start
+[INFO|main.py:83] 2017-09-01 15:10:48,419 > Train Epoch: 5 	 Loss: 0.253852
+[INFO|main.py:91] 2017-09-01 15:10:48,508 > Done
+[INFO|main.py:93] 2017-09-01 15:10:48,508 > Movie Review Sentence Classification start
+[INFO|main.py:100] 2017-09-01 15:10:48,550 > torch.Size([944, 300])
+[INFO|main.py:100] 2017-09-01 15:10:48,550 > torch.Size([5, 1, 2, 300])
+[INFO|main.py:100] 2017-09-01 15:10:48,550 > torch.Size([5])
+[INFO|main.py:100] 2017-09-01 15:10:48,551 > torch.Size([5, 1, 3, 300])
+[INFO|main.py:100] 2017-09-01 15:10:48,551 > torch.Size([5])
+[INFO|main.py:100] 2017-09-01 15:10:48,551 > torch.Size([5, 1, 4, 300])
+[INFO|main.py:100] 2017-09-01 15:10:48,551 > torch.Size([5])
+[INFO|main.py:100] 2017-09-01 15:10:48,551 > torch.Size([5, 1, 5, 300])
+[INFO|main.py:100] 2017-09-01 15:10:48,552 > torch.Size([5])
+[INFO|main.py:100] 2017-09-01 15:10:48,552 > torch.Size([2, 20])
+[INFO|main.py:100] 2017-09-01 15:10:48,552 > torch.Size([2])
+[INFO|main.py:101] 2017-09-01 15:10:48,552 > CNN Training Start
+[INFO|main.py:108] 2017-09-01 15:10:48,574 > Epoch 1 start
+[INFO|main.py:120] 2017-09-01 15:10:52,674 > batch_train_data vector:torch.Size([32, 56])
+[INFO|main.py:121] 2017-09-01 15:10:52,674 > logit vector:torch.Size([32, 2])
+[INFO|main.py:122] 2017-09-01 15:10:52,674 > batch_train_label vector:torch.Size([32])
+[INFO|main.py:120] 2017-09-01 15:10:52,702 > batch_train_data vector:torch.Size([32, 56])
+[INFO|main.py:121] 2017-09-01 15:10:52,702 > logit vector:torch.Size([32, 2])
+[INFO|main.py:122] 2017-09-01 15:10:52,702 > batch_train_label vector:torch.Size([32])
+[INFO|main.py:120] 2017-09-01 15:10:52,728 > batch_train_data vector:torch.Size([32, 56])
+[INFO|main.py:121] 2017-09-01 15:10:52,728 > logit vector:torch.Size([32, 2])
+[INFO|main.py:122] 2017-09-01 15:10:52,728 > batch_train_label vector:torch.Size([32])
+[INFO|main.py:120] 2017-09-01 15:10:52,752 > batch_train_data vector:torch.Size([4, 56])
+[INFO|main.py:121] 2017-09-01 15:10:52,752 > logit vector:torch.Size([4, 2])
+[INFO|main.py:122] 2017-09-01 15:10:52,752 > batch_train_label vector:torch.Size([4])
+[INFO|main.py:129] 2017-09-01 15:10:52,764 > Train Epoch: 1 	 Loss: 0.959856
+[INFO|main.py:108] 2017-09-01 15:10:52,764 > Epoch 2 start
+[INFO|main.py:120] 2017-09-01 15:10:52,775 > batch_train_data vector:torch.Size([32, 56])
+[INFO|main.py:121] 2017-09-01 15:10:52,776 > logit vector:torch.Size([32, 2])
+[INFO|main.py:122] 2017-09-01 15:10:52,776 > batch_train_label vector:torch.Size([32])
+[INFO|main.py:120] 2017-09-01 15:10:52,798 > batch_train_data vector:torch.Size([32, 56])
+[INFO|main.py:121] 2017-09-01 15:10:52,798 > logit vector:torch.Size([32, 2])
+[INFO|main.py:122] 2017-09-01 15:10:52,799 > batch_train_label vector:torch.Size([32])
+[INFO|main.py:120] 2017-09-01 15:10:52,822 > batch_train_data vector:torch.Size([32, 56])
+[INFO|main.py:121] 2017-09-01 15:10:52,823 > logit vector:torch.Size([32, 2])
+[INFO|main.py:122] 2017-09-01 15:10:52,823 > batch_train_label vector:torch.Size([32])
+[INFO|main.py:120] 2017-09-01 15:10:52,846 > batch_train_data vector:torch.Size([4, 56])
+[INFO|main.py:121] 2017-09-01 15:10:52,846 > logit vector:torch.Size([4, 2])
+[INFO|main.py:122] 2017-09-01 15:10:52,846 > batch_train_label vector:torch.Size([4])
+[INFO|main.py:129] 2017-09-01 15:10:52,857 > Train Epoch: 2 	 Loss: 0.646405
+[INFO|main.py:108] 2017-09-01 15:10:52,857 > Epoch 3 start
+[INFO|main.py:120] 2017-09-01 15:10:52,868 > batch_train_data vector:torch.Size([32, 56])
+[INFO|main.py:121] 2017-09-01 15:10:52,868 > logit vector:torch.Size([32, 2])
+[INFO|main.py:122] 2017-09-01 15:10:52,868 > batch_train_label vector:torch.Size([32])
+[INFO|main.py:120] 2017-09-01 15:10:52,891 > batch_train_data vector:torch.Size([32, 56])
+[INFO|main.py:121] 2017-09-01 15:10:52,892 > logit vector:torch.Size([32, 2])
+[INFO|main.py:122] 2017-09-01 15:10:52,892 > batch_train_label vector:torch.Size([32])
+[INFO|main.py:120] 2017-09-01 15:10:52,916 > batch_train_data vector:torch.Size([32, 56])
+[INFO|main.py:121] 2017-09-01 15:10:52,916 > logit vector:torch.Size([32, 2])
+[INFO|main.py:122] 2017-09-01 15:10:52,916 > batch_train_label vector:torch.Size([32])
+[INFO|main.py:120] 2017-09-01 15:10:52,938 > batch_train_data vector:torch.Size([4, 56])
+[INFO|main.py:121] 2017-09-01 15:10:52,939 > logit vector:torch.Size([4, 2])
+[INFO|main.py:122] 2017-09-01 15:10:52,939 > batch_train_label vector:torch.Size([4])
+[INFO|main.py:129] 2017-09-01 15:10:52,949 > Train Epoch: 3 	 Loss: 0.632237
+[INFO|main.py:108] 2017-09-01 15:10:52,949 > Epoch 4 start
+[INFO|main.py:120] 2017-09-01 15:10:52,960 > batch_train_data vector:torch.Size([32, 56])
+[INFO|main.py:121] 2017-09-01 15:10:52,960 > logit vector:torch.Size([32, 2])
+[INFO|main.py:122] 2017-09-01 15:10:52,960 > batch_train_label vector:torch.Size([32])
+[INFO|main.py:120] 2017-09-01 15:10:52,982 > batch_train_data vector:torch.Size([32, 56])
+[INFO|main.py:121] 2017-09-01 15:10:52,983 > logit vector:torch.Size([32, 2])
+[INFO|main.py:122] 2017-09-01 15:10:52,983 > batch_train_label vector:torch.Size([32])
+[INFO|main.py:120] 2017-09-01 15:10:53,005 > batch_train_data vector:torch.Size([32, 56])
+[INFO|main.py:121] 2017-09-01 15:10:53,006 > logit vector:torch.Size([32, 2])
+[INFO|main.py:122] 2017-09-01 15:10:53,006 > batch_train_label vector:torch.Size([32])
+[INFO|main.py:120] 2017-09-01 15:10:53,028 > batch_train_data vector:torch.Size([4, 56])
+[INFO|main.py:121] 2017-09-01 15:10:53,028 > logit vector:torch.Size([4, 2])
+[INFO|main.py:122] 2017-09-01 15:10:53,028 > batch_train_label vector:torch.Size([4])
+[INFO|main.py:129] 2017-09-01 15:10:53,038 > Train Epoch: 4 	 Loss: 0.449520
+[INFO|main.py:108] 2017-09-01 15:10:53,038 > Epoch 5 start
+[INFO|main.py:120] 2017-09-01 15:10:53,049 > batch_train_data vector:torch.Size([32, 56])
+[INFO|main.py:121] 2017-09-01 15:10:53,049 > logit vector:torch.Size([32, 2])
+[INFO|main.py:122] 2017-09-01 15:10:53,049 > batch_train_label vector:torch.Size([32])
+[INFO|main.py:120] 2017-09-01 15:10:53,072 > batch_train_data vector:torch.Size([32, 56])
+[INFO|main.py:121] 2017-09-01 15:10:53,073 > logit vector:torch.Size([32, 2])
+[INFO|main.py:122] 2017-09-01 15:10:53,073 > batch_train_label vector:torch.Size([32])
+[INFO|main.py:120] 2017-09-01 15:10:53,096 > batch_train_data vector:torch.Size([32, 56])
+[INFO|main.py:121] 2017-09-01 15:10:53,096 > logit vector:torch.Size([32, 2])
+[INFO|main.py:122] 2017-09-01 15:10:53,096 > batch_train_label vector:torch.Size([32])
+[INFO|main.py:120] 2017-09-01 15:10:53,119 > batch_train_data vector:torch.Size([4, 56])
+[INFO|main.py:121] 2017-09-01 15:10:53,119 > logit vector:torch.Size([4, 2])
+[INFO|main.py:122] 2017-09-01 15:10:53,120 > batch_train_label vector:torch.Size([4])
+[INFO|main.py:129] 2017-09-01 15:10:53,130 > Train Epoch: 5 	 Loss: 0.391019
+[INFO|main.py:45] 2017-09-01 15:12:09,478 > Parameters : {'EMBED_SIZE': 300, 'Skip_GloVe': False, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 1024, 'GLOVE_NUM_EPOCHS': 5, 'CNN_CLASS_NUM': 2, 'CNN_OUTPUT_CHANNEL_NUM': 5, 'CNN_N_GRAM_LIST': [2, 3, 4, 5], 'CNN_DROPOUT_RATE': 0.5, 'CNN_EMBED_STATIC': False, 'CNN_L_RATE': 0.01, 'CNN_NUM_EPOCHS': 5, 'CNN_BATCH_SIZE': 32}
+[INFO|main.py:47] 2017-09-01 15:12:09,478 > Word embedding(GloVe) start
+[INFO|main.py:50] 2017-09-01 15:12:10,234 > TOKENIZED_CORPUS_SIZE : 5600
+[INFO|main.py:51] 2017-09-01 15:12:10,234 > UNIQUE_WORD_SIZE : 944
+[INFO|main.py:65] 2017-09-01 15:12:12,621 > torch.Size([944, 300])
+[INFO|main.py:65] 2017-09-01 15:12:12,621 > torch.Size([944, 1])
+[INFO|main.py:65] 2017-09-01 15:12:12,622 > torch.Size([944, 300])
+[INFO|main.py:65] 2017-09-01 15:12:12,622 > torch.Size([944, 1])
+[INFO|main.py:66] 2017-09-01 15:12:12,622 > GloVe Training Start
+[INFO|main.py:69] 2017-09-01 15:12:12,624 > Epoch 1 start
+[INFO|main.py:83] 2017-09-01 15:12:37,815 > Train Epoch: 1 	 Loss: 2.314695
+[INFO|main.py:69] 2017-09-01 15:12:37,896 > Epoch 2 start
+[INFO|main.py:83] 2017-09-01 15:12:55,032 > Train Epoch: 2 	 Loss: 0.780093
+[INFO|main.py:69] 2017-09-01 15:12:55,109 > Epoch 3 start
+[INFO|main.py:83] 2017-09-01 15:13:12,098 > Train Epoch: 3 	 Loss: 0.482793
+[INFO|main.py:69] 2017-09-01 15:13:12,175 > Epoch 4 start
+[INFO|main.py:83] 2017-09-01 15:13:29,045 > Train Epoch: 4 	 Loss: 0.343016
+[INFO|main.py:69] 2017-09-01 15:13:29,123 > Epoch 5 start
+[INFO|main.py:83] 2017-09-01 15:13:45,596 > Train Epoch: 5 	 Loss: 0.254686
+[INFO|main.py:91] 2017-09-01 15:13:45,668 > Done
+[INFO|main.py:93] 2017-09-01 15:13:45,668 > Movie Review Sentence Classification start
+[INFO|main.py:100] 2017-09-01 15:13:45,700 > torch.Size([944, 300])
+[INFO|main.py:100] 2017-09-01 15:13:45,700 > torch.Size([5, 1, 2, 300])
+[INFO|main.py:100] 2017-09-01 15:13:45,701 > torch.Size([5])
+[INFO|main.py:100] 2017-09-01 15:13:45,701 > torch.Size([5, 1, 3, 300])
+[INFO|main.py:100] 2017-09-01 15:13:45,701 > torch.Size([5])
+[INFO|main.py:100] 2017-09-01 15:13:45,701 > torch.Size([5, 1, 4, 300])
+[INFO|main.py:100] 2017-09-01 15:13:45,701 > torch.Size([5])
+[INFO|main.py:100] 2017-09-01 15:13:45,701 > torch.Size([5, 1, 5, 300])
+[INFO|main.py:100] 2017-09-01 15:13:45,701 > torch.Size([5])
+[INFO|main.py:100] 2017-09-01 15:13:45,702 > torch.Size([2, 20])
+[INFO|main.py:100] 2017-09-01 15:13:45,702 > torch.Size([2])
+[INFO|main.py:101] 2017-09-01 15:13:45,702 > CNN Training Start
+[INFO|main.py:107] 2017-09-01 15:13:45,714 > Epoch 1 start
+[INFO|main.py:128] 2017-09-01 15:13:49,686 > Train Epoch: 1 	 Loss: 0.768507
+[INFO|main.py:107] 2017-09-01 15:13:49,687 > Epoch 2 start
+[INFO|main.py:128] 2017-09-01 15:13:49,785 > Train Epoch: 2 	 Loss: 0.860696
+[INFO|main.py:107] 2017-09-01 15:13:49,785 > Epoch 3 start
+[INFO|main.py:128] 2017-09-01 15:13:49,883 > Train Epoch: 3 	 Loss: 0.608485
+[INFO|main.py:107] 2017-09-01 15:13:49,884 > Epoch 4 start
+[INFO|main.py:128] 2017-09-01 15:13:49,981 > Train Epoch: 4 	 Loss: 0.474225
+[INFO|main.py:107] 2017-09-01 15:13:49,981 > Epoch 5 start
+[INFO|main.py:128] 2017-09-01 15:13:50,075 > Train Epoch: 5 	 Loss: 0.497301
+[main.py:45] 2017-09-01 15:18:26,238 > Parameters : {'EMBED_SIZE': 300, 'Skip_GloVe': False, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 1024, 'GLOVE_NUM_EPOCHS': 5, 'CNN_CLASS_NUM': 2, 'CNN_OUTPUT_CHANNEL_NUM': 5, 'CNN_N_GRAM_LIST': [2, 3, 4, 5], 'CNN_DROPOUT_RATE': 0.5, 'CNN_EMBED_STATIC': False, 'CNN_L_RATE': 0.01, 'CNN_NUM_EPOCHS': 5, 'CNN_BATCH_SIZE': 32}
+[main.py:47] 2017-09-01 15:18:26,238 > Word embedding(GloVe) start
+[main.py:50] 2017-09-01 15:18:26,995 > TOKENIZED_CORPUS_SIZE : 336
+[main.py:51] 2017-09-01 15:18:26,996 > UNIQUE_WORD_SIZE : 88
+[main.py:65] 2017-09-01 15:18:29,144 > torch.Size([88, 300])
+[main.py:65] 2017-09-01 15:18:29,144 > torch.Size([88, 1])
+[main.py:65] 2017-09-01 15:18:29,144 > torch.Size([88, 300])
+[main.py:65] 2017-09-01 15:18:29,145 > torch.Size([88, 1])
+[main.py:66] 2017-09-01 15:18:29,145 > GloVe Training Start
+[main.py:69] 2017-09-01 15:18:29,145 > Epoch 1 start
+[main.py:83] 2017-09-01 15:18:36,937 > Train Epoch: 1 	 Loss: 25.178596
+[main.py:69] 2017-09-01 15:18:36,961 > Epoch 2 start
+[main.py:83] 2017-09-01 15:18:37,115 > Train Epoch: 2 	 Loss: 6.098683
+[main.py:69] 2017-09-01 15:18:37,140 > Epoch 3 start
+[main.py:83] 2017-09-01 15:18:37,300 > Train Epoch: 3 	 Loss: 2.713560
+[main.py:69] 2017-09-01 15:18:37,325 > Epoch 4 start
+[main.py:83] 2017-09-01 15:18:37,486 > Train Epoch: 4 	 Loss: 3.782734
+[main.py:69] 2017-09-01 15:18:37,512 > Epoch 5 start
+[main.py:83] 2017-09-01 15:18:37,676 > Train Epoch: 5 	 Loss: 0.810274
+[main.py:91] 2017-09-01 15:18:37,701 > Done
+[main.py:93] 2017-09-01 15:18:37,701 > Movie Review Sentence Classification start
+[main.py:100] 2017-09-01 15:18:37,709 > torch.Size([88, 300])
+[main.py:100] 2017-09-01 15:18:37,709 > torch.Size([5, 1, 2, 300])
+[main.py:100] 2017-09-01 15:18:37,709 > torch.Size([5])
+[main.py:100] 2017-09-01 15:18:37,709 > torch.Size([5, 1, 3, 300])
+[main.py:100] 2017-09-01 15:18:37,710 > torch.Size([5])
+[main.py:100] 2017-09-01 15:18:37,710 > torch.Size([5, 1, 4, 300])
+[main.py:100] 2017-09-01 15:18:37,710 > torch.Size([5])
+[main.py:100] 2017-09-01 15:18:37,710 > torch.Size([5, 1, 5, 300])
+[main.py:100] 2017-09-01 15:18:37,710 > torch.Size([5])
+[main.py:100] 2017-09-01 15:18:37,710 > torch.Size([2, 20])
+[main.py:100] 2017-09-01 15:18:37,710 > torch.Size([2])
+[main.py:101] 2017-09-01 15:18:37,711 > CNN Training Start
+[main.py:107] 2017-09-01 15:18:37,719 > Epoch 1 start
+[main.py:119] 2017-09-01 15:18:41,586 > batch_train_data vector:torch.Size([6, 56])
+[main.py:120] 2017-09-01 15:18:41,586 > logit vector:torch.Size([6, 2])
+[main.py:121] 2017-09-01 15:18:41,586 > batch_train_label vector:torch.Size([6])
+[main.py:128] 2017-09-01 15:18:41,600 > Train Epoch: 1 	 Loss: 0.752413
+[main.py:107] 2017-09-01 15:18:41,600 > Epoch 2 start
+[main.py:119] 2017-09-01 15:18:41,610 > batch_train_data vector:torch.Size([6, 56])
+[main.py:120] 2017-09-01 15:18:41,611 > logit vector:torch.Size([6, 2])
+[main.py:121] 2017-09-01 15:18:41,611 > batch_train_label vector:torch.Size([6])
+[main.py:128] 2017-09-01 15:18:41,620 > Train Epoch: 2 	 Loss: 0.783889
+[main.py:107] 2017-09-01 15:18:41,620 > Epoch 3 start
+[main.py:119] 2017-09-01 15:18:41,629 > batch_train_data vector:torch.Size([6, 56])
+[main.py:120] 2017-09-01 15:18:41,629 > logit vector:torch.Size([6, 2])
+[main.py:121] 2017-09-01 15:18:41,629 > batch_train_label vector:torch.Size([6])
+[main.py:128] 2017-09-01 15:18:41,638 > Train Epoch: 3 	 Loss: 0.401194
+[main.py:107] 2017-09-01 15:18:41,638 > Epoch 4 start
+[main.py:119] 2017-09-01 15:18:41,647 > batch_train_data vector:torch.Size([6, 56])
+[main.py:120] 2017-09-01 15:18:41,647 > logit vector:torch.Size([6, 2])
+[main.py:121] 2017-09-01 15:18:41,647 > batch_train_label vector:torch.Size([6])
+[main.py:128] 2017-09-01 15:18:41,656 > Train Epoch: 4 	 Loss: 0.312448
+[main.py:107] 2017-09-01 15:18:41,656 > Epoch 5 start
+[main.py:119] 2017-09-01 15:18:41,664 > batch_train_data vector:torch.Size([6, 56])
+[main.py:120] 2017-09-01 15:18:41,664 > logit vector:torch.Size([6, 2])
+[main.py:121] 2017-09-01 15:18:41,665 > batch_train_label vector:torch.Size([6])
+[main.py:128] 2017-09-01 15:18:41,673 > Train Epoch: 5 	 Loss: 0.364420
+[main.py:45] 2017-09-01 15:19:00,080 > Parameters : {'EMBED_SIZE': 300, 'Skip_GloVe': False, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 1024, 'GLOVE_NUM_EPOCHS': 5, 'CNN_CLASS_NUM': 2, 'CNN_OUTPUT_CHANNEL_NUM': 5, 'CNN_N_GRAM_LIST': [2, 3, 4, 5], 'CNN_DROPOUT_RATE': 0.5, 'CNN_EMBED_STATIC': False, 'CNN_L_RATE': 0.01, 'CNN_NUM_EPOCHS': 5, 'CNN_BATCH_SIZE': 32}
+[main.py:47] 2017-09-01 15:19:00,080 > Word embedding(GloVe) start
+[main.py:50] 2017-09-01 15:19:00,825 > TOKENIZED_CORPUS_SIZE : 336
+[main.py:51] 2017-09-01 15:19:00,825 > UNIQUE_WORD_SIZE : 88
+[main.py:65] 2017-09-01 15:19:02,943 > torch.Size([88, 300])
+[main.py:65] 2017-09-01 15:19:02,943 > torch.Size([88, 1])
+[main.py:65] 2017-09-01 15:19:02,943 > torch.Size([88, 300])
+[main.py:65] 2017-09-01 15:19:02,944 > torch.Size([88, 1])
+[main.py:66] 2017-09-01 15:19:02,944 > GloVe Training Start
+[main.py:69] 2017-09-01 15:19:02,944 > Epoch 1 start
+[main.py:83] 2017-09-01 15:19:10,746 > Train Epoch: 1 	 Loss: 30.123529
+[main.py:69] 2017-09-01 15:19:10,770 > Epoch 2 start
+[main.py:83] 2017-09-01 15:19:10,924 > Train Epoch: 2 	 Loss: 7.858436
+[main.py:69] 2017-09-01 15:19:10,946 > Epoch 3 start
+[main.py:83] 2017-09-01 15:19:11,111 > Train Epoch: 3 	 Loss: 2.700832
+[main.py:69] 2017-09-01 15:19:11,133 > Epoch 4 start
+[main.py:83] 2017-09-01 15:19:11,289 > Train Epoch: 4 	 Loss: 1.602988
+[main.py:69] 2017-09-01 15:19:11,309 > Epoch 5 start
+[main.py:83] 2017-09-01 15:19:11,478 > Train Epoch: 5 	 Loss: 0.907966
+[main.py:91] 2017-09-01 15:19:11,503 > Done
+[main.py:93] 2017-09-01 15:19:11,503 > Movie Review Sentence Classification start
+[main.py:100] 2017-09-01 15:19:11,510 > torch.Size([88, 300])
+[main.py:100] 2017-09-01 15:19:11,510 > torch.Size([5, 1, 2, 300])
+[main.py:100] 2017-09-01 15:19:11,511 > torch.Size([5])
+[main.py:100] 2017-09-01 15:19:11,511 > torch.Size([5, 1, 3, 300])
+[main.py:100] 2017-09-01 15:19:11,511 > torch.Size([5])
+[main.py:100] 2017-09-01 15:19:11,511 > torch.Size([5, 1, 4, 300])
+[main.py:100] 2017-09-01 15:19:11,511 > torch.Size([5])
+[main.py:100] 2017-09-01 15:19:11,511 > torch.Size([5, 1, 5, 300])
+[main.py:100] 2017-09-01 15:19:11,512 > torch.Size([5])
+[main.py:100] 2017-09-01 15:19:11,512 > torch.Size([2, 20])
+[main.py:100] 2017-09-01 15:19:11,512 > torch.Size([2])
+[main.py:101] 2017-09-01 15:19:11,512 > CNN Training Start
+[main.py:107] 2017-09-01 15:19:11,520 > Epoch 1 start
+[main.py:119] 2017-09-01 15:19:15,406 > batch_train_data vector:torch.Size([6, 56])
+[main.py:120] 2017-09-01 15:19:15,406 > logit vector:torch.Size([6, 2])
+[main.py:121] 2017-09-01 15:19:15,406 > batch_train_label vector:torch.Size([6])
+[main.py:128] 2017-09-01 15:19:15,423 > Train Epoch: 1 	 Loss: 0.667129
+[main.py:107] 2017-09-01 15:19:15,423 > Epoch 2 start
+[main.py:119] 2017-09-01 15:19:15,436 > batch_train_data vector:torch.Size([6, 56])
+[main.py:120] 2017-09-01 15:19:15,436 > logit vector:torch.Size([6, 2])
+[main.py:121] 2017-09-01 15:19:15,436 > batch_train_label vector:torch.Size([6])
+[main.py:128] 2017-09-01 15:19:15,448 > Train Epoch: 2 	 Loss: 0.896916
+[main.py:107] 2017-09-01 15:19:15,448 > Epoch 3 start
+[main.py:119] 2017-09-01 15:19:15,459 > batch_train_data vector:torch.Size([6, 56])
+[main.py:120] 2017-09-01 15:19:15,459 > logit vector:torch.Size([6, 2])
+[main.py:121] 2017-09-01 15:19:15,459 > batch_train_label vector:torch.Size([6])
+[main.py:128] 2017-09-01 15:19:15,470 > Train Epoch: 3 	 Loss: 0.459017
+[main.py:107] 2017-09-01 15:19:15,471 > Epoch 4 start
+[main.py:119] 2017-09-01 15:19:15,481 > batch_train_data vector:torch.Size([6, 56])
+[main.py:120] 2017-09-01 15:19:15,481 > logit vector:torch.Size([6, 2])
+[main.py:121] 2017-09-01 15:19:15,481 > batch_train_label vector:torch.Size([6])
+[main.py:128] 2017-09-01 15:19:15,492 > Train Epoch: 4 	 Loss: 0.597755
+[main.py:107] 2017-09-01 15:19:15,492 > Epoch 5 start
+[main.py:119] 2017-09-01 15:19:15,502 > batch_train_data vector:torch.Size([6, 56])
+[main.py:120] 2017-09-01 15:19:15,502 > logit vector:torch.Size([6, 2])
+[main.py:121] 2017-09-01 15:19:15,502 > batch_train_label vector:torch.Size([6])
+[main.py:128] 2017-09-01 15:19:15,513 > Train Epoch: 5 	 Loss: 0.571031
+[main.py:45] 2017-09-01 16:30:57,475 > Parameters : {'EMBED_SIZE': 300, 'Skip_GloVe': False, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 1024, 'GLOVE_NUM_EPOCHS': 5, 'CNN_CLASS_NUM': 2, 'CNN_OUTPUT_CHANNEL_NUM': 5, 'CNN_N_GRAM_LIST': [2, 3, 4, 5], 'CNN_DROPOUT_RATE': 0.5, 'CNN_EMBED_STATIC': False, 'CNN_L_RATE': 0.01, 'CNN_NUM_EPOCHS': 5, 'CNN_BATCH_SIZE': 32}
+[main.py:47] 2017-09-01 16:30:57,476 > Word embedding(GloVe) start
+[main.py:50] 2017-09-01 16:30:58,237 > TOKENIZED_CORPUS_SIZE : 336
+[main.py:51] 2017-09-01 16:30:58,237 > UNIQUE_WORD_SIZE : 88
+[main.py:65] 2017-09-01 16:31:00,550 > torch.Size([88, 300])
+[main.py:65] 2017-09-01 16:31:00,551 > torch.Size([88, 1])
+[main.py:65] 2017-09-01 16:31:00,551 > torch.Size([88, 300])
+[main.py:65] 2017-09-01 16:31:00,551 > torch.Size([88, 1])
+[main.py:66] 2017-09-01 16:31:00,551 > GloVe Training Start
+[main.py:69] 2017-09-01 16:31:00,552 > Epoch 1 start
+[main.py:83] 2017-09-01 16:31:08,246 > Train Epoch: 1 	 Loss: 16.685593
+[main.py:69] 2017-09-01 16:31:08,270 > Epoch 2 start
+[main.py:83] 2017-09-01 16:31:08,428 > Train Epoch: 2 	 Loss: 11.620665
+[main.py:69] 2017-09-01 16:31:08,447 > Epoch 3 start
+[main.py:83] 2017-09-01 16:31:08,599 > Train Epoch: 3 	 Loss: 4.309476
+[main.py:69] 2017-09-01 16:31:08,619 > Epoch 4 start
+[main.py:83] 2017-09-01 16:31:08,771 > Train Epoch: 4 	 Loss: 1.752430
+[main.py:69] 2017-09-01 16:31:08,792 > Epoch 5 start
+[main.py:83] 2017-09-01 16:31:08,942 > Train Epoch: 5 	 Loss: 0.968391
+[main.py:91] 2017-09-01 16:31:08,961 > Done
+[main.py:93] 2017-09-01 16:31:08,961 > Movie Review Sentence Classification start
+[main.py:100] 2017-09-01 16:31:08,968 > torch.Size([88, 300])
+[main.py:100] 2017-09-01 16:31:08,968 > torch.Size([5, 1, 2, 300])
+[main.py:100] 2017-09-01 16:31:08,968 > torch.Size([5])
+[main.py:100] 2017-09-01 16:31:08,969 > torch.Size([5, 1, 3, 300])
+[main.py:100] 2017-09-01 16:31:08,969 > torch.Size([5])
+[main.py:100] 2017-09-01 16:31:08,969 > torch.Size([5, 1, 4, 300])
+[main.py:100] 2017-09-01 16:31:08,969 > torch.Size([5])
+[main.py:100] 2017-09-01 16:31:08,969 > torch.Size([5, 1, 5, 300])
+[main.py:100] 2017-09-01 16:31:08,969 > torch.Size([5])
+[main.py:100] 2017-09-01 16:31:08,970 > torch.Size([2, 20])
+[main.py:100] 2017-09-01 16:31:08,970 > torch.Size([2])
+[main.py:101] 2017-09-01 16:31:08,970 > CNN Training Start
+[main.py:107] 2017-09-01 16:31:08,978 > Epoch 1 start
+[main.py:45] 2017-09-01 16:33:06,725 > Parameters : {'EMBED_SIZE': 300, 'Skip_GloVe': False, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 1024, 'GLOVE_NUM_EPOCHS': 5, 'CNN_CLASS_NUM': 2, 'CNN_OUTPUT_CHANNEL_NUM': 5, 'CNN_N_GRAM_LIST': [2, 3, 4, 5], 'CNN_DROPOUT_RATE': 0.5, 'CNN_EMBED_STATIC': False, 'CNN_L_RATE': 0.01, 'CNN_NUM_EPOCHS': 5, 'CNN_BATCH_SIZE': 32}
+[main.py:47] 2017-09-01 16:33:06,725 > Word embedding(GloVe) start
+[main.py:50] 2017-09-01 16:33:07,475 > TOKENIZED_CORPUS_SIZE : 336
+[main.py:51] 2017-09-01 16:33:07,475 > UNIQUE_WORD_SIZE : 88
+[main.py:65] 2017-09-01 16:33:09,825 > torch.Size([88, 300])
+[main.py:65] 2017-09-01 16:33:09,826 > torch.Size([88, 1])
+[main.py:65] 2017-09-01 16:33:09,826 > torch.Size([88, 300])
+[main.py:65] 2017-09-01 16:33:09,826 > torch.Size([88, 1])
+[main.py:66] 2017-09-01 16:33:09,826 > GloVe Training Start
+[main.py:69] 2017-09-01 16:33:09,827 > Epoch 1 start
+[main.py:83] 2017-09-01 16:33:17,474 > Train Epoch: 1 	 Loss: 17.399401
+[main.py:69] 2017-09-01 16:33:17,498 > Epoch 2 start
+[main.py:83] 2017-09-01 16:33:17,640 > Train Epoch: 2 	 Loss: 5.306345
+[main.py:69] 2017-09-01 16:33:17,661 > Epoch 3 start
+[main.py:83] 2017-09-01 16:33:17,807 > Train Epoch: 3 	 Loss: 8.017285
+[main.py:69] 2017-09-01 16:33:17,829 > Epoch 4 start
+[main.py:83] 2017-09-01 16:33:17,977 > Train Epoch: 4 	 Loss: 2.375970
+[main.py:69] 2017-09-01 16:33:18,000 > Epoch 5 start
+[main.py:83] 2017-09-01 16:33:18,146 > Train Epoch: 5 	 Loss: 0.703040
+[main.py:91] 2017-09-01 16:33:18,168 > Done
+[main.py:93] 2017-09-01 16:33:18,168 > Movie Review Sentence Classification start
+[main.py:100] 2017-09-01 16:33:18,175 > torch.Size([88, 300])
+[main.py:100] 2017-09-01 16:33:18,175 > torch.Size([5, 1, 2, 300])
+[main.py:100] 2017-09-01 16:33:18,175 > torch.Size([5])
+[main.py:100] 2017-09-01 16:33:18,175 > torch.Size([5, 1, 3, 300])
+[main.py:100] 2017-09-01 16:33:18,176 > torch.Size([5])
+[main.py:100] 2017-09-01 16:33:18,176 > torch.Size([5, 1, 4, 300])
+[main.py:100] 2017-09-01 16:33:18,176 > torch.Size([5])
+[main.py:100] 2017-09-01 16:33:18,176 > torch.Size([5, 1, 5, 300])
+[main.py:100] 2017-09-01 16:33:18,176 > torch.Size([5])
+[main.py:100] 2017-09-01 16:33:18,176 > torch.Size([2, 20])
+[main.py:100] 2017-09-01 16:33:18,177 > torch.Size([2])
+[main.py:101] 2017-09-01 16:33:18,177 > CNN Training Start
+[main.py:107] 2017-09-01 16:33:18,185 > Epoch 1 start
+[main.py:119] 2017-09-01 16:33:21,885 > batch_train_data vector:torch.Size([6, 56])
+[main.py:120] 2017-09-01 16:33:21,885 > logit vector:torch.Size([6, 2])
+[main.py:121] 2017-09-01 16:33:21,885 > batch_train_label vector:torch.Size([6])
+[main.py:128] 2017-09-01 16:33:21,899 > Train Epoch: 1 	 Loss: 0.660307
+[main.py:107] 2017-09-01 16:33:21,899 > Epoch 2 start
+[main.py:119] 2017-09-01 16:33:21,912 > batch_train_data vector:torch.Size([6, 56])
+[main.py:120] 2017-09-01 16:33:21,912 > logit vector:torch.Size([6, 2])
+[main.py:121] 2017-09-01 16:33:21,912 > batch_train_label vector:torch.Size([6])
+[main.py:128] 2017-09-01 16:33:21,923 > Train Epoch: 2 	 Loss: 1.234177
+[main.py:107] 2017-09-01 16:33:21,923 > Epoch 3 start
+[main.py:119] 2017-09-01 16:33:21,933 > batch_train_data vector:torch.Size([6, 56])
+[main.py:120] 2017-09-01 16:33:21,934 > logit vector:torch.Size([6, 2])
+[main.py:121] 2017-09-01 16:33:21,934 > batch_train_label vector:torch.Size([6])
+[main.py:128] 2017-09-01 16:33:21,944 > Train Epoch: 3 	 Loss: 0.674627
+[main.py:107] 2017-09-01 16:33:21,944 > Epoch 4 start
+[main.py:119] 2017-09-01 16:33:21,955 > batch_train_data vector:torch.Size([6, 56])
+[main.py:120] 2017-09-01 16:33:21,955 > logit vector:torch.Size([6, 2])
+[main.py:121] 2017-09-01 16:33:21,955 > batch_train_label vector:torch.Size([6])
+[main.py:128] 2017-09-01 16:33:21,965 > Train Epoch: 4 	 Loss: 0.991727
+[main.py:107] 2017-09-01 16:33:21,965 > Epoch 5 start
+[main.py:119] 2017-09-01 16:33:21,975 > batch_train_data vector:torch.Size([6, 56])
+[main.py:120] 2017-09-01 16:33:21,976 > logit vector:torch.Size([6, 2])
+[main.py:121] 2017-09-01 16:33:21,976 > batch_train_label vector:torch.Size([6])
+[main.py:128] 2017-09-01 16:33:21,985 > Train Epoch: 5 	 Loss: 0.218905
+[main.py:45] 2017-09-01 16:34:46,953 > Parameters : {'EMBED_SIZE': 300, 'Skip_GloVe': False, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 1024, 'GLOVE_NUM_EPOCHS': 5, 'CNN_CLASS_NUM': 2, 'CNN_OUTPUT_CHANNEL_NUM': 5, 'CNN_N_GRAM_LIST': [2, 3, 4, 5], 'CNN_DROPOUT_RATE': 0.5, 'CNN_EMBED_STATIC': False, 'CNN_L_RATE': 0.01, 'CNN_NUM_EPOCHS': 5, 'CNN_BATCH_SIZE': 32}
+[main.py:47] 2017-09-01 16:34:46,953 > Word embedding(GloVe) start
+[main.py:50] 2017-09-01 16:34:47,714 > TOKENIZED_CORPUS_SIZE : 336
+[main.py:51] 2017-09-01 16:34:47,714 > UNIQUE_WORD_SIZE : 88
+[main.py:65] 2017-09-01 16:34:50,059 > torch.Size([88, 300])
+[main.py:65] 2017-09-01 16:34:50,060 > torch.Size([88, 1])
+[main.py:65] 2017-09-01 16:34:50,060 > torch.Size([88, 300])
+[main.py:65] 2017-09-01 16:34:50,060 > torch.Size([88, 1])
+[main.py:66] 2017-09-01 16:34:50,061 > GloVe Training Start
+[main.py:69] 2017-09-01 16:34:50,061 > Epoch 1 start
+[main.py:83] 2017-09-01 16:34:57,790 > Train Epoch: 1 	 Loss: 15.821131
+[main.py:69] 2017-09-01 16:34:57,817 > Epoch 2 start
+[main.py:83] 2017-09-01 16:34:57,965 > Train Epoch: 2 	 Loss: 12.855382
+[main.py:69] 2017-09-01 16:34:57,988 > Epoch 3 start
+[main.py:83] 2017-09-01 16:34:58,137 > Train Epoch: 3 	 Loss: 2.456284
+[main.py:69] 2017-09-01 16:34:58,159 > Epoch 4 start
+[main.py:83] 2017-09-01 16:34:58,309 > Train Epoch: 4 	 Loss: 1.318152
+[main.py:69] 2017-09-01 16:34:58,329 > Epoch 5 start
+[main.py:83] 2017-09-01 16:34:58,471 > Train Epoch: 5 	 Loss: 0.862739
+[main.py:91] 2017-09-01 16:34:58,492 > Done
+[main.py:93] 2017-09-01 16:34:58,492 > Movie Review Sentence Classification start
+[main.py:100] 2017-09-01 16:34:58,499 > torch.Size([88, 300])
+[main.py:100] 2017-09-01 16:34:58,499 > torch.Size([5, 1, 2, 300])
+[main.py:100] 2017-09-01 16:34:58,499 > torch.Size([5])
+[main.py:100] 2017-09-01 16:34:58,499 > torch.Size([5, 1, 3, 300])
+[main.py:100] 2017-09-01 16:34:58,500 > torch.Size([5])
+[main.py:100] 2017-09-01 16:34:58,500 > torch.Size([5, 1, 4, 300])
+[main.py:100] 2017-09-01 16:34:58,500 > torch.Size([5])
+[main.py:100] 2017-09-01 16:34:58,500 > torch.Size([5, 1, 5, 300])
+[main.py:100] 2017-09-01 16:34:58,500 > torch.Size([5])
+[main.py:100] 2017-09-01 16:34:58,500 > torch.Size([2, 20])
+[main.py:100] 2017-09-01 16:34:58,501 > torch.Size([2])
+[main.py:101] 2017-09-01 16:34:58,501 > CNN Training Start
+[main.py:107] 2017-09-01 16:34:58,509 > Epoch 1 start
+[main.py:119] 2017-09-01 16:35:02,391 > batch_train_data vector:torch.Size([6, 56])
+[main.py:120] 2017-09-01 16:35:02,391 > logit vector:torch.Size([6, 2])
+[main.py:121] 2017-09-01 16:35:02,391 > batch_train_label vector:torch.Size([6])
+[main.py:128] 2017-09-01 16:35:02,409 > Train Epoch: 1 	 Loss: 0.728114
+[main.py:107] 2017-09-01 16:35:02,409 > Epoch 2 start
+[main.py:119] 2017-09-01 16:35:02,424 > batch_train_data vector:torch.Size([6, 56])
+[main.py:120] 2017-09-01 16:35:02,425 > logit vector:torch.Size([6, 2])
+[main.py:121] 2017-09-01 16:35:02,425 > batch_train_label vector:torch.Size([6])
+[main.py:128] 2017-09-01 16:35:02,439 > Train Epoch: 2 	 Loss: 0.890453
+[main.py:107] 2017-09-01 16:35:02,439 > Epoch 3 start
+[main.py:119] 2017-09-01 16:35:02,452 > batch_train_data vector:torch.Size([6, 56])
+[main.py:120] 2017-09-01 16:35:02,452 > logit vector:torch.Size([6, 2])
+[main.py:121] 2017-09-01 16:35:02,452 > batch_train_label vector:torch.Size([6])
+[main.py:128] 2017-09-01 16:35:02,465 > Train Epoch: 3 	 Loss: 0.902635
+[main.py:107] 2017-09-01 16:35:02,465 > Epoch 4 start
+[main.py:119] 2017-09-01 16:35:02,479 > batch_train_data vector:torch.Size([6, 56])
+[main.py:120] 2017-09-01 16:35:02,479 > logit vector:torch.Size([6, 2])
+[main.py:121] 2017-09-01 16:35:02,480 > batch_train_label vector:torch.Size([6])
+[main.py:128] 2017-09-01 16:35:02,492 > Train Epoch: 4 	 Loss: 0.604795
+[main.py:107] 2017-09-01 16:35:02,492 > Epoch 5 start
+[main.py:119] 2017-09-01 16:35:02,504 > batch_train_data vector:torch.Size([6, 56])
+[main.py:120] 2017-09-01 16:35:02,504 > logit vector:torch.Size([6, 2])
+[main.py:121] 2017-09-01 16:35:02,505 > batch_train_label vector:torch.Size([6])
+[main.py:128] 2017-09-01 16:35:02,516 > Train Epoch: 5 	 Loss: 0.300655
+[main.py:45] 2017-09-01 16:40:54,384 > Parameters : {'EMBED_SIZE': 300, 'Skip_GloVe': False, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 10240, 'GLOVE_NUM_EPOCHS': 1, 'CNN_CLASS_NUM': 2, 'CNN_OUTPUT_CHANNEL_NUM': 10, 'CNN_N_GRAM_LIST': [2, 3, 4, 5], 'CNN_DROPOUT_RATE': 0.5, 'CNN_EMBED_STATIC': False, 'CNN_L_RATE': 0.01, 'CNN_NUM_EPOCHS': 1, 'CNN_BATCH_SIZE': 32}
+[main.py:47] 2017-09-01 16:40:54,384 > Word embedding(GloVe) start
+[main.py:50] 2017-09-01 16:40:56,375 > TOKENIZED_CORPUS_SIZE : 597072
+[main.py:51] 2017-09-01 16:40:56,376 > UNIQUE_WORD_SIZE : 18765
+[main.py:65] 2017-09-01 16:41:08,523 > torch.Size([18765, 300])
+[main.py:65] 2017-09-01 16:41:08,524 > torch.Size([18765, 1])
+[main.py:65] 2017-09-01 16:41:08,524 > torch.Size([18765, 300])
+[main.py:65] 2017-09-01 16:41:08,524 > torch.Size([18765, 1])
+[main.py:66] 2017-09-01 16:41:08,524 > GloVe Training Start
+[main.py:69] 2017-09-01 16:41:08,526 > Epoch 1 start
+[main.py:45] 2017-09-01 16:43:28,161 > Parameters : {'EMBED_SIZE': 300, 'Skip_GloVe': False, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 1024, 'GLOVE_NUM_EPOCHS': 1, 'CNN_CLASS_NUM': 2, 'CNN_OUTPUT_CHANNEL_NUM': 10, 'CNN_N_GRAM_LIST': [2, 3, 4, 5], 'CNN_DROPOUT_RATE': 0.5, 'CNN_EMBED_STATIC': False, 'CNN_L_RATE': 0.01, 'CNN_NUM_EPOCHS': 1, 'CNN_BATCH_SIZE': 32}
+[main.py:47] 2017-09-01 16:43:28,162 > Word embedding(GloVe) start
+[main.py:50] 2017-09-01 16:43:28,957 > TOKENIZED_CORPUS_SIZE : 11200
+[main.py:51] 2017-09-01 16:43:28,957 > UNIQUE_WORD_SIZE : 1688
+[main.py:65] 2017-09-01 16:43:31,712 > torch.Size([1688, 300])
+[main.py:65] 2017-09-01 16:43:31,713 > torch.Size([1688, 1])
+[main.py:65] 2017-09-01 16:43:31,713 > torch.Size([1688, 300])
+[main.py:65] 2017-09-01 16:43:31,713 > torch.Size([1688, 1])
+[main.py:66] 2017-09-01 16:43:31,713 > GloVe Training Start
+[main.py:69] 2017-09-01 16:43:31,715 > Epoch 1 start
+[main.py:83] 2017-09-01 16:44:35,354 > Train Epoch: 1 	 Loss: 1.253157
+[main.py:91] 2017-09-01 16:44:35,494 > Done
+[main.py:93] 2017-09-01 16:44:35,495 > Movie Review Sentence Classification start
+[main.py:100] 2017-09-01 16:44:35,568 > torch.Size([1688, 300])
+[main.py:100] 2017-09-01 16:44:35,569 > torch.Size([10, 1, 2, 300])
+[main.py:100] 2017-09-01 16:44:35,569 > torch.Size([10])
+[main.py:100] 2017-09-01 16:44:35,569 > torch.Size([10, 1, 3, 300])
+[main.py:100] 2017-09-01 16:44:35,569 > torch.Size([10])
+[main.py:100] 2017-09-01 16:44:35,569 > torch.Size([10, 1, 4, 300])
+[main.py:100] 2017-09-01 16:44:35,570 > torch.Size([10])
+[main.py:100] 2017-09-01 16:44:35,570 > torch.Size([10, 1, 5, 300])
+[main.py:100] 2017-09-01 16:44:35,570 > torch.Size([10])
+[main.py:100] 2017-09-01 16:44:35,570 > torch.Size([2, 40])
+[main.py:100] 2017-09-01 16:44:35,570 > torch.Size([2])
+[main.py:101] 2017-09-01 16:44:35,571 > CNN Training Start
+[main.py:107] 2017-09-01 16:44:35,581 > Epoch 1 start
+[main.py:128] 2017-09-01 16:44:39,762 > Train Epoch: 1 	 Loss: 0.844090
+[main.py:131] 2017-09-01 16:44:39,958 > Done
+[main.py:45] 2017-09-01 16:45:52,031 > Parameters : {'EMBED_SIZE': 300, 'Skip_GloVe': False, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 1024, 'GLOVE_NUM_EPOCHS': 1, 'CNN_CLASS_NUM': 2, 'CNN_OUTPUT_CHANNEL_NUM': 10, 'CNN_N_GRAM_LIST': [2, 3, 4, 5], 'CNN_DROPOUT_RATE': 0.5, 'CNN_EMBED_STATIC': False, 'CNN_L_RATE': 0.01, 'CNN_NUM_EPOCHS': 1, 'CNN_BATCH_SIZE': 32}
+[main.py:47] 2017-09-01 16:45:52,031 > Word embedding(GloVe) start
+[main.py:50] 2017-09-01 16:45:53,932 > TOKENIZED_CORPUS_SIZE : 597072
+[main.py:51] 2017-09-01 16:45:53,933 > UNIQUE_WORD_SIZE : 18765
+[main.py:45] 2017-09-01 16:46:26,008 > Parameters : {'EMBED_SIZE': 300, 'Skip_GloVe': False, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 1024, 'GLOVE_NUM_EPOCHS': 10, 'CNN_CLASS_NUM': 2, 'CNN_OUTPUT_CHANNEL_NUM': 10, 'CNN_N_GRAM_LIST': [2, 3, 4, 5], 'CNN_DROPOUT_RATE': 0.5, 'CNN_EMBED_STATIC': False, 'CNN_L_RATE': 0.01, 'CNN_NUM_EPOCHS': 100, 'CNN_BATCH_SIZE': 32}
+[main.py:47] 2017-09-01 16:46:26,008 > Word embedding(GloVe) start
+[main.py:50] 2017-09-01 16:46:28,007 > TOKENIZED_CORPUS_SIZE : 597072
+[main.py:51] 2017-09-01 16:46:28,007 > UNIQUE_WORD_SIZE : 18765
+[main.py:65] 2017-09-01 16:46:40,354 > torch.Size([18765, 300])
+[main.py:65] 2017-09-01 16:46:40,356 > torch.Size([18765, 1])
+[main.py:65] 2017-09-01 16:46:40,356 > torch.Size([18765, 300])
+[main.py:65] 2017-09-01 16:46:40,356 > torch.Size([18765, 1])
+[main.py:66] 2017-09-01 16:46:40,356 > GloVe Training Start
+[main.py:69] 2017-09-01 16:46:40,358 > Epoch 1 start
+[main.py:45] 2017-09-01 16:51:27,458 > Parameters : {'EMBED_SIZE': 300, 'Skip_GloVe': False, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 8096, 'GLOVE_NUM_EPOCHS': 3, 'CNN_CLASS_NUM': 2, 'CNN_OUTPUT_CHANNEL_NUM': 10, 'CNN_N_GRAM_LIST': [2, 3, 4, 5], 'CNN_DROPOUT_RATE': 0.5, 'CNN_EMBED_STATIC': False, 'CNN_L_RATE': 0.01, 'CNN_NUM_EPOCHS': 100, 'CNN_BATCH_SIZE': 32}
+[main.py:47] 2017-09-01 16:51:27,459 > Word embedding(GloVe) start
+[main.py:50] 2017-09-01 16:51:29,353 > TOKENIZED_CORPUS_SIZE : 597072
+[main.py:51] 2017-09-01 16:51:29,353 > UNIQUE_WORD_SIZE : 18765
+[main.py:65] 2017-09-01 16:51:42,132 > torch.Size([18765, 300])
+[main.py:65] 2017-09-01 16:51:42,133 > torch.Size([18765, 1])
+[main.py:65] 2017-09-01 16:51:42,133 > torch.Size([18765, 300])
+[main.py:65] 2017-09-01 16:51:42,133 > torch.Size([18765, 1])
+[main.py:66] 2017-09-01 16:51:42,133 > GloVe Training Start
+[main.py:69] 2017-09-01 16:51:42,136 > Epoch 1 start
+[main.py:83] 2017-09-01 18:09:54,907 > Train Epoch: 1 	 Loss: 2.512201
+[main.py:69] 2017-09-01 18:09:56,014 > Epoch 2 start
+[main.py:83] 2017-09-01 19:28:40,548 > Train Epoch: 2 	 Loss: 1.406152
+[main.py:69] 2017-09-01 19:28:41,893 > Epoch 3 start
+[main.py:83] 2017-09-01 20:46:54,548 > Train Epoch: 3 	 Loss: 1.183277
+[main.py:91] 2017-09-01 20:46:55,883 > Done
+[main.py:93] 2017-09-01 20:46:55,883 > Movie Review Sentence Classification start
+[main.py:100] 2017-09-01 20:46:56,572 > torch.Size([18765, 300])
+[main.py:100] 2017-09-01 20:46:56,572 > torch.Size([10, 1, 2, 300])
+[main.py:100] 2017-09-01 20:46:56,572 > torch.Size([10])
+[main.py:100] 2017-09-01 20:46:56,572 > torch.Size([10, 1, 3, 300])
+[main.py:100] 2017-09-01 20:46:56,573 > torch.Size([10])
+[main.py:100] 2017-09-01 20:46:56,573 > torch.Size([10, 1, 4, 300])
+[main.py:100] 2017-09-01 20:46:56,573 > torch.Size([10])
+[main.py:100] 2017-09-01 20:46:56,573 > torch.Size([10, 1, 5, 300])
+[main.py:100] 2017-09-01 20:46:56,573 > torch.Size([10])
+[main.py:100] 2017-09-01 20:46:56,573 > torch.Size([2, 40])
+[main.py:100] 2017-09-01 20:46:56,573 > torch.Size([2])
+[main.py:101] 2017-09-01 20:46:56,574 > CNN Training Start
+[main.py:107] 2017-09-01 20:46:56,836 > Epoch 1 start
+[main.py:128] 2017-09-01 20:47:10,703 > Train Epoch: 1 	 Loss: 0.683848
+[main.py:107] 2017-09-01 20:47:11,500 > Epoch 2 start
+[main.py:128] 2017-09-01 20:47:21,928 > Train Epoch: 2 	 Loss: 0.559111
+[main.py:107] 2017-09-01 20:47:22,750 > Epoch 3 start
+[main.py:128] 2017-09-01 20:47:33,126 > Train Epoch: 3 	 Loss: 0.398631
+[main.py:107] 2017-09-01 20:47:33,948 > Epoch 4 start
+[main.py:128] 2017-09-01 20:47:44,303 > Train Epoch: 4 	 Loss: 0.309332
+[main.py:107] 2017-09-01 20:47:45,127 > Epoch 5 start
+[main.py:128] 2017-09-01 20:47:55,488 > Train Epoch: 5 	 Loss: 0.291668
+[main.py:107] 2017-09-01 20:47:56,306 > Epoch 6 start
+[main.py:128] 2017-09-01 20:48:06,666 > Train Epoch: 6 	 Loss: 0.255471
+[main.py:107] 2017-09-01 20:48:07,485 > Epoch 7 start
+[main.py:128] 2017-09-01 20:48:17,846 > Train Epoch: 7 	 Loss: 0.248368
+[main.py:107] 2017-09-01 20:48:18,675 > Epoch 8 start
+[main.py:128] 2017-09-01 20:48:29,046 > Train Epoch: 8 	 Loss: 0.229796
+[main.py:107] 2017-09-01 20:48:29,871 > Epoch 9 start
+[main.py:128] 2017-09-01 20:48:40,269 > Train Epoch: 9 	 Loss: 0.202706
+[main.py:107] 2017-09-01 20:48:41,091 > Epoch 10 start
+[main.py:128] 2017-09-01 20:48:51,431 > Train Epoch: 10 	 Loss: 0.217922
+[main.py:107] 2017-09-01 20:48:52,253 > Epoch 11 start
+[main.py:128] 2017-09-01 20:49:02,663 > Train Epoch: 11 	 Loss: 0.287750
+[main.py:107] 2017-09-01 20:49:03,486 > Epoch 12 start
+[main.py:128] 2017-09-01 20:49:13,826 > Train Epoch: 12 	 Loss: 0.307910
+[main.py:107] 2017-09-01 20:49:14,639 > Epoch 13 start
+[main.py:128] 2017-09-01 20:49:25,006 > Train Epoch: 13 	 Loss: 0.298519
+[main.py:107] 2017-09-01 20:49:25,839 > Epoch 14 start
+[main.py:128] 2017-09-01 20:49:36,186 > Train Epoch: 14 	 Loss: 0.237701
+[main.py:107] 2017-09-01 20:49:37,018 > Epoch 15 start
+[main.py:128] 2017-09-01 20:49:47,426 > Train Epoch: 15 	 Loss: 0.185599
+[main.py:107] 2017-09-01 20:49:48,253 > Epoch 16 start
+[main.py:128] 2017-09-01 20:49:58,656 > Train Epoch: 16 	 Loss: 0.199099
+[main.py:107] 2017-09-01 20:49:59,492 > Epoch 17 start
+[main.py:128] 2017-09-01 20:50:09,937 > Train Epoch: 17 	 Loss: 0.168046
+[main.py:107] 2017-09-01 20:50:10,753 > Epoch 18 start
+[main.py:128] 2017-09-01 20:50:21,160 > Train Epoch: 18 	 Loss: 0.233739
+[main.py:107] 2017-09-01 20:50:21,991 > Epoch 19 start
+[main.py:128] 2017-09-01 20:50:32,392 > Train Epoch: 19 	 Loss: 0.274840
+[main.py:107] 2017-09-01 20:50:33,224 > Epoch 20 start
+[main.py:128] 2017-09-01 20:50:43,690 > Train Epoch: 20 	 Loss: 0.283197
+[main.py:107] 2017-09-01 20:50:44,518 > Epoch 21 start
+[main.py:128] 2017-09-01 20:50:55,035 > Train Epoch: 21 	 Loss: 0.225810
+[main.py:107] 2017-09-01 20:50:55,860 > Epoch 22 start
+[main.py:128] 2017-09-01 20:51:06,314 > Train Epoch: 22 	 Loss: 0.261737
+[main.py:107] 2017-09-01 20:51:07,138 > Epoch 23 start
+[main.py:128] 2017-09-01 20:51:17,728 > Train Epoch: 23 	 Loss: 0.208427
+[main.py:107] 2017-09-01 20:51:18,549 > Epoch 24 start
+[main.py:128] 2017-09-01 20:51:28,977 > Train Epoch: 24 	 Loss: 0.161396
+[main.py:107] 2017-09-01 20:51:29,798 > Epoch 25 start
+[main.py:128] 2017-09-01 20:51:40,195 > Train Epoch: 25 	 Loss: 0.173928
+[main.py:107] 2017-09-01 20:51:41,029 > Epoch 26 start
+[main.py:128] 2017-09-01 20:51:51,486 > Train Epoch: 26 	 Loss: 0.263905
+[main.py:107] 2017-09-01 20:51:52,323 > Epoch 27 start
+[main.py:128] 2017-09-01 20:52:02,522 > Train Epoch: 27 	 Loss: 0.266941
+[main.py:107] 2017-09-01 20:52:03,320 > Epoch 28 start
+[main.py:128] 2017-09-01 20:52:12,482 > Train Epoch: 28 	 Loss: 0.347402
+[main.py:107] 2017-09-01 20:52:13,243 > Epoch 29 start
+[main.py:128] 2017-09-01 20:52:23,555 > Train Epoch: 29 	 Loss: 0.348030
+[main.py:107] 2017-09-01 20:52:24,387 > Epoch 30 start
+[main.py:128] 2017-09-01 20:52:34,811 > Train Epoch: 30 	 Loss: 0.307648
+[main.py:107] 2017-09-01 20:52:35,634 > Epoch 31 start
+[main.py:128] 2017-09-01 20:52:45,809 > Train Epoch: 31 	 Loss: 0.269329
+[main.py:107] 2017-09-01 20:52:46,633 > Epoch 32 start
+[main.py:128] 2017-09-01 20:52:56,964 > Train Epoch: 32 	 Loss: 0.257958
+[main.py:107] 2017-09-01 20:52:57,781 > Epoch 33 start
+[main.py:128] 2017-09-01 20:53:08,154 > Train Epoch: 33 	 Loss: 0.224800
+[main.py:107] 2017-09-01 20:53:08,975 > Epoch 34 start
+[main.py:128] 2017-09-01 20:53:19,317 > Train Epoch: 34 	 Loss: 0.255119
+[main.py:107] 2017-09-01 20:53:20,129 > Epoch 35 start
+[main.py:128] 2017-09-01 20:53:30,495 > Train Epoch: 35 	 Loss: 0.258468
+[main.py:107] 2017-09-01 20:53:31,317 > Epoch 36 start
+[main.py:128] 2017-09-01 20:53:41,726 > Train Epoch: 36 	 Loss: 0.230086
+[main.py:107] 2017-09-01 20:53:42,544 > Epoch 37 start
+[main.py:128] 2017-09-01 20:53:52,955 > Train Epoch: 37 	 Loss: 0.154110
+[main.py:107] 2017-09-01 20:53:53,798 > Epoch 38 start
+[main.py:128] 2017-09-01 20:54:04,103 > Train Epoch: 38 	 Loss: 0.224192
+[main.py:107] 2017-09-01 20:54:04,922 > Epoch 39 start
+[main.py:128] 2017-09-01 20:54:15,283 > Train Epoch: 39 	 Loss: 0.109246
+[main.py:107] 2017-09-01 20:54:16,107 > Epoch 40 start
+[main.py:128] 2017-09-01 20:54:26,445 > Train Epoch: 40 	 Loss: 0.257780
+[main.py:107] 2017-09-01 20:54:27,270 > Epoch 41 start
+[main.py:128] 2017-09-01 20:54:37,699 > Train Epoch: 41 	 Loss: 0.187410
+[main.py:107] 2017-09-01 20:54:38,526 > Epoch 42 start
+[main.py:128] 2017-09-01 20:54:48,921 > Train Epoch: 42 	 Loss: 0.257044
+[main.py:107] 2017-09-01 20:54:49,742 > Epoch 43 start
+[main.py:45] 2017-09-16 00:19:42,022 > Parameters : {'EMBED_SIZE': 300, 'Skip_GloVe': True, 'GLOVE_CONTEXT_SIZE': 5, 'GLOVE_X_MAX': 100, 'GLOVE_ALPHA': 0.75, 'GLOVE_L_RATE': 0.05, 'GLOVE_PROCESS_NUM': 4, 'GLOVE_BATCH_SIZE': 8096, 'GLOVE_NUM_EPOCHS': 3, 'CNN_CLASS_NUM': 2, 'CNN_OUTPUT_CHANNEL_NUM': 10, 'CNN_N_GRAM_LIST': [2, 3, 4, 5], 'CNN_DROPOUT_RATE': 0.6, 'CNN_EMBED_STATIC': False, 'CNN_L_RATE': 0.01, 'CNN_NUM_EPOCHS': 30, 'CNN_BATCH_SIZE': 20}
+[main.py:47] 2017-09-16 00:19:42,023 > Word embedding(GloVe) start
+[main.py:50] 2017-09-16 00:19:44,085 > TOKENIZED_CORPUS_SIZE : 597072
+[main.py:51] 2017-09-16 00:19:44,085 > UNIQUE_WORD_SIZE : 18765
+[main.py:93] 2017-09-16 00:19:44,085 > Movie Review Sentence Classification start
+[main.py:100] 2017-09-16 00:19:47,394 > torch.Size([18765, 300])
+[main.py:100] 2017-09-16 00:19:47,395 > torch.Size([10, 1, 2, 300])
+[main.py:100] 2017-09-16 00:19:47,395 > torch.Size([10])
+[main.py:100] 2017-09-16 00:19:47,395 > torch.Size([10, 1, 3, 300])
+[main.py:100] 2017-09-16 00:19:47,395 > torch.Size([10])
+[main.py:100] 2017-09-16 00:19:47,395 > torch.Size([10, 1, 4, 300])
+[main.py:100] 2017-09-16 00:19:47,396 > torch.Size([10])
+[main.py:100] 2017-09-16 00:19:47,396 > torch.Size([10, 1, 5, 300])
+[main.py:100] 2017-09-16 00:19:47,396 > torch.Size([10])
+[main.py:100] 2017-09-16 00:19:47,396 > torch.Size([2, 40])
+[main.py:100] 2017-09-16 00:19:47,396 > torch.Size([2])
+[main.py:101] 2017-09-16 00:19:47,396 > CNN Training Start
+[main.py:107] 2017-09-16 00:19:47,705 > Epoch 1 start
